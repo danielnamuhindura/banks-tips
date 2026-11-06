@@ -2,70 +2,54 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TEAMS - BANKS TIPS</title>
+<title>BANKS TIPS - Teams</title>
 <style>
-body{font-family:Arial;margin:0;background:#f2f2f2;text-align:center;padding:10px}
-h1{color:#0b3d91}
-.card{background:white;margin:15px auto;padding:20px;border-radius:15px;max-width:500px;text-align:left}
-.card h2{margin:0;color:#0b3d91}
+body{font-family:Arial;margin:0;background:#f2f2f2;text-align:center}
+.top{background:#0b3d91;color:white;padding:25px 10px}
+.card{background:white;margin:15px;padding:20px;border-radius:15px;text-align:left}
+.quote{background:#fff3b0;padding:10px;border-radius:10px;text-align:center;font-style:italic}
 input{width:90%;padding:12px;margin-top:10px;font-size:18px;text-align:center}
-button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold}
-.teams{display:none;margin-top:15px;background:#fff3b0;padding:15px;border-radius:10px}
-.team{padding:8px;border-bottom:1px solid #ddd;font-size:18px}
-.win{color:green;font-weight:bold}
-.loss{color:red;font-weight:bold}
-.pending{color:#cc9900;font-weight:bold}
+button{width:100%;padding:14px;background:#0b3d91;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold;margin-top:10px}
+.team{padding:10px;border-bottom:1px solid #eee;font-size:18px}
 </style>
 </head>
 <body>
-<h1>BANKS TIPS ⭐</h1>
-<p><b>Enter your CODE to unlock your ticket teams.</b><br>No code? Pay first on main page, then WhatsApp us.</p>
+<div class="top"><h1>BANKS TIPS ⭐</h1><p>Today's Teams - 3 Tickets Daily<br>Win Small. Bank Big.</p></div>
 
-<!-- 1. STANDARD -->
+<!-- STANDARD -->
 <div class="card">
 <h2>1. STANDARD TICKET</h2>
-<p>Pay R30 / $2 - Get STANDARD code</p>
-<input id="code1" placeholder="Enter STANDARD Code">
-<button onclick="unlock1()">UNLOCK STANDARD</button>
-<div id="teams1" class="teams">
-<div class="team">Team 1 vs Team 2 - <span class="pending">⏳ Waiting</span></div>
-<div class="team">Team 3 vs Team 4 - <span class="pending">⏳ Waiting</span></div>
-<p>✅ = Win &nbsp; ❌ = Loss &nbsp; ⏳ = Waiting</p>
-</div>
+<div class="quote">"Small wins every day make a big bank."</div>
+<p>⚽ Team 1: ____ vs ____ ⏳ WAIT</p>
+<p>⚽ Team 2: ____ vs ____ ⏳ WAIT</p>
+<p>⚽ Team 3: ____ vs ____ ⏳ WAIT</p>
+<input id="c1" placeholder="Enter STANDARD Code">
+<button onclick="if(document.getElementById('c1').value.trim()=='STD30'){alert('STANDARD Unlocked! Go to WhatsApp for teams')}else{alert('Wrong STANDARD Code! Pay R30 first')}">UNLOCK STANDARD - R30 / $2</button>
 </div>
 
-<!-- 2. TRADE -->
+<!-- TRADE -->
 <div class="card">
 <h2>2. TRADE TICKET</h2>
-<p>Pay R30 / $2 - Get TRADE code</p>
-<input id="code2" placeholder="Enter TRADE Code">
-<button onclick="unlock2()">UNLOCK TRADE</button>
-<div id="teams2" class="teams">
-<div class="team">Team 5 vs Team 6 - <span class="pending">⏳ Waiting</span></div>
-<div class="team">Team 7 vs Team 8 - <span class="pending">⏳ Waiting</span></div>
-<p>✅ = Win &nbsp; ❌ = Loss &nbsp; ⏳ = Waiting</p>
-</div>
+<div class="quote">"Patience is profit. Trade smart, not fast."</div>
+<p>⚽ Team 1: ____ vs ____ ⏳ WAIT</p>
+<p>⚽ Team 2: ____ vs ____ ⏳ WAIT</p>
+<p>⚽ Team 3: ____ vs ____ ⏳ WAIT</p>
+<input id="c2" placeholder="Enter TRADE Code">
+<button onclick="if(document.getElementById('c2').value.trim()=='TRD30'){alert('TRADE Unlocked!')}else{alert('Wrong TRADE Code! Pay R30 first')}">UNLOCK TRADE - R30 / $2</button>
 </div>
 
-<!-- 3. BANK -->
-<div class="card">
-<h2>3. BANK TICKET ⭐</h2>
-<p>Pay R30 / $2 - Get BANK code</p>
-<input id="code3" placeholder="Enter BANK Code">
-<button onclick="unlock3()">UNLOCK BANK</button>
-<div id="teams3" class="teams">
-<div class="team">Team 9 vs Team 10 - <span class="win">✅ WIN</span></div>
-<div class="team">Team 11 vs Team 12 - <span class="loss">❌ LOSS</span></div>
-<p>✅ = Win &nbsp; ❌ = Loss &nbsp; ⏳ = Waiting</p>
-</div>
+<!-- BANK -->
+<div class="card" style="border:2px solid gold">
+<h2>3. BANK TICKET ⭐ MOST TRUSTED</h2>
+<div class="quote">"BANK is not luck. BANK is plan."</div>
+<p>⭐ Team 1: ____ vs ____ ⏳ WAIT</p>
+<p>⭐ Team 2: ____ vs ____ ⏳ WAIT</p>
+<p>⭐ Team 3: ____ vs ____ ⏳ WAIT</p>
+<input id="c3" placeholder="Enter BANK Code">
+<button onclick="if(document.getElementById('c3').value.trim()=='BNK30'){alert('BANK Unlocked!')}else{alert('Wrong BANK Code! Pay R30 first')}">UNLOCK BANK - R30 / $2</button>
 </div>
 
-<script>
-function unlock1(){ if(document.getElementById('code1').value.trim() === 'STD30'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
-function unlock2(){ if(document.getElementById('code2').value.trim() === 'TRD30'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
-function unlock3(){ if(document.getElementById('code3').value.trim() === 'BNK30'){ document.getElementById('teams3').style.display='block'; alert('BANK Unlocked!'); } else { alert('Wrong BANK Code!'); } }
-</script>
-
-<p><a href="index.html">← Back to Main Shop</a></p>
+<p><a href="index.html">← Back to Main Website</a></p>
+<p>WhatsApp SA: +27 83 684 6150<br>WhatsApp DRC: +243 970 810 284<br>Email: danielnamuhindura@gmail.com</p>
 </body>
 </html>
