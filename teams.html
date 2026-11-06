@@ -15,11 +15,26 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 .win{color:green;font-weight:bold}
 .loss{color:red;font-weight:bold}
 .pending{color:#cc9900;font-weight:bold}
+.livebox{background:#000;color:#fff;padding:15px;border-radius:15px;max-width:500px;margin:15px auto;text-align:left}
+.livebox h2{color:#00ff00;margin:0}
+.livebtn{background:#00c853;color:white;padding:13px;border:none;border-radius:10px;font-size:18px;font-weight:bold;width:100%;margin-top:10px}
+iframe{width:100%;height:600px;border:none;border-radius:10px;background:white}
 </style>
 </head>
 <body>
 <h1>BANKS TIPS ⭐</h1>
 <p><b>Enter your CODE to unlock your ticket teams.</b><br>No code? Pay first on main page, then WhatsApp us.</p>
+
+<!-- LIVE SCORE -->
+<div class="livebox">
+<h2>🔴 LIVE SCORES - LIVE NOW</h2>
+<p>See all your matches LIVE here! Scores update every minute!</p>
+<button class="livebtn" onclick="showLive()">🔴 CLICK TO SHOW LIVE SCORES</button>
+<div id="liveFrame" style="display:none;margin-top:10px">
+<iframe src="https://www.livescore.com/en/"></iframe>
+<p style="color:#fff;font-size:14px;text-align:center">If scores don't show, tap below:<br><a href="https://www.livescore.com/en/" target="_blank" style="color:#00ff00;font-weight:bold">OPEN LIVE SCORES IN NEW TAB ↗️</a></p>
+</div>
+</div>
 
 <!-- 1. STANDARD -->
 <div class="card">
@@ -50,33 +65,43 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 <input id="code2" placeholder="Enter TRADE Code">
 <button onclick="unlock2()">UNLOCK TRADE</button>
 <div id="teams2" class="teams">
-<div class="team">1. ROMA vs SASSUOLO - Double Chance - DRAW OR ROMA - <span class="pending">⏳ Waiting</span></div>
-<div class="team">2. LAZIO vs LECCE - Double Chance - DRAW OR LAZIO - <span class="pending">⏳ Waiting</span></div>
-<div class="team">3. COMO vs CAGLIARI - Double Chance - DRAW OR COMO - <span class="pending">⏳ Waiting</span></div>
-<div class="team">4. VIKING vs BODO/GLIMT - Double Chance - DRAW OR BODO/GLIMT - <span class="pending">⏳ Waiting</span></div>
-<div class="team">5. LASK LINZ vs HARTBERG - Double Chance - DRAW OR LASK LINZ - <span class="pending">⏳ Waiting</span></div>
-<div class="team">6. CRYSTAL PALACE vs LIVERPOOL - Double Chance - DRAW OR LIVERPOOL - <span class="pending">⏳ Waiting</span></div>
-<div class="team">7. NOTTINGHAM FOREST vs MAN CITY - Double Chance - DRAW OR MAN CITY - <span class="pending">⏳ Waiting</span></div>
-<div class="team">8. ARSENAL vs FULHAM - Double Chance - DRAW OR ARSENAL - <span class="pending">⏳ Waiting</span></div>
-<div class="team">9. ASTON VILLA vs BRENTFORD - Double Chance - DRAW OR ASTON VILLA - <span class="pending">⏳ Waiting</span></div>
-<div class="team">10. REAL MADRID vs CELTA VIGO - Double Chance - DRAW OR REAL MADRID - <span class="pending">⏳ Waiting</span></div>
-<div class="team">11. DORTMUND vs ELVERSBERG - Double Chance - DRAW OR DORTMUND - <span class="pending">⏳ Waiting</span></div>
-<div class="team">12. MAINZ vs BAYERN MUNICH - Double Chance - DRAW OR BAYERN MUNICH - <span class="pending">⏳ Waiting</span></div>
-<div class="team">13. LEVERKUSEN vs AUGSBURG - Double Chance - DRAW OR LEVERKUSEN - <span class="pending">⏳ Waiting</span></div>
-<div class="team">14. FC PORTO vs ESTRELA - Double Chance - DRAW OR PORTO - <span class="pending">⏳ Waiting</span></div>
-<div class="team">15. SL BENFICA vs VITORIA GUIMARAES - Double Chance - DRAW OR BENFICA - <span class="pending">⏳ Waiting</span></div>
-<div class="team">16. JUVENTUS vs TORINO - Double Chance - DRAW OR JUVENTUS - <span class="pending">⏳ Waiting</span></div>
-<div class="team">17. BOLOGNA vs PARMA - Double Chance - DRAW OR BOLOGNA - <span class="pending">⏳ Waiting</span></div>
-<div class="team">18. AC MILAN vs GENOA - Double Chance - DRAW OR AC MILAN - <span class="pending">⏳ Waiting</span></div>
-<div class="team">19. PSG vs TROYES - Double Chance - DRAW OR PSG - <span class="pending">⏳ Waiting</span></div>
-<div class="team">20. GALATASARAY vs ISTANBULSPOR - Double Chance - DRAW OR GALATASARAY - <span class="pending">⏳ Waiting</span></div>
-<div class="team">21. FENERBAHCE vs TRABZONSPOR - Double Chance - DRAW OR FENERBAHCE - <span class="pending">⏳ Waiting</span></div>
-<div class="team">22. CLUB BRUGGE vs GENT - Double Chance - DRAW OR CLUB BRUGGE - <span class="pending">⏳ Waiting</span></div>
-<div class="team">23. UNION ST GILLOISE vs GENK - Double Chance - DRAW OR UNION ST GILLOISE - <span class="pending">⏳ Waiting</span></div>
-<div class="team">24. MIDTJYLLAND vs SOENDERJYSKE - Double Chance - DRAW OR MIDTJYLLAND - <span class="pending">⏳ Waiting</span></div>
-<div class="team">25. APOEL vs AEK LARNACA - Double Chance - DRAW OR APOEL - <span class="pending">⏳ Waiting</span></div>
-<div class="team">26. FEYENOORD vs PSV - Double Chance - DRAW OR PSV - <span class="pending">⏳ Waiting</span></div>
-<div class="team">27. AJAX vs AZ ALKMAAR - Double Chance - DRAW OR AJAX - <span class="pending">⏳ Waiting</span></div>
+<div class="team">1. ROMA vs SASSUOLO - 1X2 - ROMA WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">2. LAZIO vs LECCE - 1X2 - LAZIO WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">3. COMO vs CAGLIARI - 1X2 - COMO WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">4. VIKING vs KFUM OSLO - 1X2 - VIKING WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">5. TROMSOE vs BODOE/GLIMT - 1X2 - BODOE/GLIMT WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">6. LASK LINZ vs HARTBERG - Double Chance - DRAW OR LASK LINZ - <span class="pending">⏳ Waiting</span></div>
+<div class="team">7. CRYSTAL PALACE vs LIVERPOOL - Double Chance - DRAW OR LIVERPOOL - <span class="pending">⏳ Waiting</span></div>
+<div class="team">8. NOTTINGHAM FOREST vs MAN CITY - Double Chance - DRAW OR MAN CITY - <span class="pending">⏳ Waiting</span></div>
+<div class="team">9. ARSENAL vs HULL CITY - 1X2 - ARSENAL WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">10. MAN CITY vs FULHAM - 1X2 - MAN CITY WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">11. ASTON VILLA vs SUNDERLAND - Double Chance - DRAW OR ASTON VILLA - <span class="pending">⏳ Waiting</span></div>
+<div class="team">12. VALENCIA vs REAL MADRID - 1X2 - REAL MADRID WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">13. REAL MADRID vs CELTA VIGO - 1X2 - REAL MADRID WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">14. GETAFE vs ATLETICO MADRID - Double Chance - DRAW OR ATLETICO - <span class="pending">⏳ Waiting</span></div>
+<div class="team">15. DORTMUND vs ELVERSBERG - 1X2 - DORTMUND WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">16. MAINZ vs BAYERN MUNICH - 1X2 - BAYERN MUNICH WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">17. LEIPZIG vs AUGSBURG - Double Chance - DRAW OR LEIPZIG - <span class="pending">⏳ Waiting</span></div>
+<div class="team">18. FC COLOGNE vs LEVERKUSEN - Double Chance - DRAW OR LEVERKUSEN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">19. SPORTING CP vs MOREIRENSE - 1X2 - SPORTING CP WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">20. GUIMARAES vs FC PORTO - Double Chance - DRAW OR PORTO - <span class="pending">⏳ Waiting</span></div>
+<div class="team">21. ESTRELA AMADORA vs SL BENFICA - Double Chance - DRAW OR BENFICA - <span class="pending">⏳ Waiting</span></div>
+<div class="team">22. JUVENTUS vs CREMONESE - 1X2 - JUVENTUS WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">23. PARMA vs BOLOGNA - Double Chance - DRAW OR BOLOGNA - <span class="pending">⏳ Waiting</span></div>
+<div class="team">24. GENOA vs AC MILAN - Double Chance - DRAW OR AC MILAN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">25. PSG vs TROYES - 1X2 - PSG WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">26. NICE vs PSG - Double Chance - DRAW OR PSG - <span class="pending">⏳ Waiting</span></div>
+<div class="team">27. GALATASARAY vs AMED - Double Chance - DRAW OR GALATASARAY - <span class="pending">⏳ Waiting</span></div>
+<div class="team">28. CORUM vs FENERBAHCE - Double Chance - DRAW OR FENERBAHCE - <span class="pending">⏳ Waiting</span></div>
+<div class="team">29. ALANYASPOR vs TRABZONSPOR - Double Chance - DRAW OR TRABZONSPOR - <span class="pending">⏳ Waiting</span></div>
+<div class="team">30. GENT vs KORTRIJK - Double Chance - DRAW OR GENT - <span class="pending">⏳ Waiting</span></div>
+<div class="team">31. UNION GILLOISE vs GENK - Double Chance - DRAW OR UNION GILLOISE - <span class="pending">⏳ Waiting</span></div>
+<div class="team">32. MIDTJYLLAND vs SOENDERJYSKE - Double Chance - DRAW OR MIDTJYLLAND - <span class="pending">⏳ Waiting</span></div>
+<div class="team">33. AARHUS vs HORSENS - Double Chance - DRAW OR AARHUS - <span class="pending">⏳ Waiting</span></div>
+<div class="team">34. AFK CSIKSZEREDA vs UNI CLUJ - Double Chance - DRAW OR UNI CLUJ - <span class="pending">⏳ Waiting</span></div>
+<div class="team">35. FCSB vs CORVINUL HUNEDOARA - Double Chance - DRAW OR FCSB - <span class="pending">⏳ Waiting</span></div>
+<div class="team">36. RIED vs LASK LINZ - Double Chance - DRAW OR LASK LINZ - <span class="pending">⏳ Waiting</span></div>
+<div class="team">37. CLUB BRUGGE vs CHARLEROI - Double Chance - DRAW OR CLUB BRUGGE - <span class="pending">⏳ Waiting</span></div>
 <p>✅ = Win &nbsp; ❌ = Loss &nbsp; ⏳ = Waiting</p>
 </div>
 </div>
@@ -103,13 +128,6 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 </div>
 
 <script>
+function showLive(){ document.getElementById('liveFrame').style.display='block'; }
 function unlock1(){ if(document.getElementById('code1').value.trim() === 'STD40'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
-function unlock2(){ if(document.getElementById('code2').value.trim() === 'TAD200'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
-function unlock3(){ if(document.getElementById('code3').value.trim() === 'BNK100'){ document.getElementById('teams3').style.display='block'; alert('BANK Unlocked!'); } else { alert('Wrong BANK Code!'); } }
-</script>
-
-<br><br>
-<a href="index.html" style="display:block;background:#0b3d91;color:white;padding:18px;text-align:center;font-size:22px;font-weight:bold;border-radius:12px;text-decoration:none;">⬅️ BACK TO MAIN WEBSITE</a>
-<br><br>
-</body>
-</html>
+function unlock2(){ if(document.getElementById('code2').value.trim() === 'TAD200'){ document.getElement
