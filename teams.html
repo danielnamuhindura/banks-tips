@@ -63,8 +63,16 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 <input id="code3" placeholder="Enter BANK Code">
 <button onclick="unlock3()">UNLOCK BANK</button>
 <div id="teams3" class="teams">
-<div class="team">Team 9 vs Team 10 - <span class="win">✅ WIN</span></div>
-<div class="team">Team 11 vs Team 12 - <span class="loss">❌ LOSS</span></div>
+<div class="team">1. ORLANDO PIRATES vs SEKHUKHUNE UNITED - 1X2 - ORLANDO PIRATES WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">2. LASK LINZ vs TSV HARTBERG - 1X2 - LASK LINZ WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">3. ESTRELA AMADORA vs SL BENFICA - 1X2 - SL BENFICA WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">4. FC MIDTJYLLAND vs SOENDERJYSKE - 1X2 - MIDTJYLLAND WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">5. CRYSTAL PALACE vs LIVERPOOL - 1X2 - LIVERPOOL WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">6. VALENCIA vs REAL MADRID - 1X2 - REAL MADRID WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">7. AL AHLY vs EL SEKKA EL HADID - 1X2 - AL AHLY WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">8. NOTTINGHAM FOREST vs MANCHESTER CITY - 1X2 - MAN CITY WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">9. BORUSSIA DORTMUND vs SV ELVERSBERG - 1X2 - DORTMUND WIN - <span class="pending">⏳ Waiting</span></div>
+<div class="team">10. FSV MAINZ vs BAYERN MUNICH - 1X2 - BAYERN MUNICH WIN - <span class="pending">⏳ Waiting</span></div>
 <p>✅ = Win &nbsp; ❌ = Loss &nbsp; ⏳ = Waiting</p>
 </div>
 </div>
@@ -72,11 +80,11 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 <script>
 function unlock1(){ if(document.getElementById('code1').value.trim() === 'STD40'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
 function unlock2(){ if(document.getElementById('code2').value.trim() === 'TRD30'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
-function unlock3(){ if(document.getElementById('code3').value.trim() === 'BNK30'){ document.getElementById('teams3').style.display='block'; alert('BANK Unlocked!'); } else { alert('Wrong BANK Code!'); } }
+function unlock3(){ if(document.getElementById('code3').value.trim() === 'BNK100'){ document.getElementById('teams3').style.display='block'; alert('BANK Unlocked!'); } else { alert('Wrong BANK Code!'); } }
 </script>
 
 <br><br>
 <a href="index.html" style="display:block;background:#0b3d91;color:white;padding:18px;text-align:center;font-size:22px;font-weight:bold;border-radius:12px;text-decoration:none;">⬅️ BACK TO MAIN WEBSITE</a>
 <br><br>
 </body>
-</html> 
+</html>
