@@ -1,54 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BANKS TIPS - Today's Teams</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEAMS - BANKS TIPS</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6f8}
-.top{background:#0b3d91;color:white;text-align:center;padding:20px}
-.top h1{margin:0;font-size:28px}
-.wrap{max-width:600px;margin:0 auto;padding:15px}
-.card{background:white;border-radius:14px;padding:20px;margin-bottom:15px}
-.card h2{color:#0b3d91;margin:0 0 5px 0}
-.quote{background:#fff3cd;padding:10px;border-radius:10px;text-align:center;font-style:italic;margin:10px 0}
-.team{padding:12px;border-bottom:1px solid #eee;font-size:17px;display:flex;justify-content:space-between}
-.win{color:green;font-weight:bold;font-size:20px}
-.lose{color:red;font-weight:bold;font-size:20px}
-.wait{color:#ff9800;font-weight:bold;font-size:20px}
-.btn{display:block;background:#0b3d91;color:white;text-align:center;padding:14px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:15px}
-.back{display:block;text-align:center;margin:15px;color:#0b3d91;font-weight:bold}
+body{font-family:Arial;margin:0;background:#f2f2f2;text-align:center;padding:10px}
+h1{color:#0b3d91}
+.card{background:white;margin:15px auto;padding:20px;border-radius:15px;max-width:500px;text-align:left}
+.card h2{margin:0;color:#0b3d91}
+input{width:90%;padding:12px;margin-top:10px;font-size:18px;text-align:center}
+button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold}
+.teams{display:none;margin-top:15px;background:#fff3b0;padding:15px;border-radius:10px}
+.team{padding:8px;border-bottom:1px solid #ddd;font-size:18px}
+.win{color:green;font-weight:bold}
+.loss{color:red;font-weight:bold}
+.pending{color:#cc9900;font-weight:bold}
 </style>
 </head>
 <body>
-<div class="top"><h1>BANKS TIPS ⭐</h1><p>Today's Teams - 3 Tickets Daily</p><p>Win Small. Bank Big.</p></div>
-<div class="wrap">
+<h1>BANKS TIPS ⭐</h1>
+<p><b>Enter your CODE to unlock your ticket teams.</b><br>No code? Pay first on main page, then WhatsApp us.</p>
+
+<!-- 1. STANDARD -->
 <div class="card">
 <h2>1. STANDARD TICKET</h2>
-<div class="quote">"Small wins every day make a big bank."</div>
-<div class="team"><span>⚽ Team 1: ______ vs ______</span><span class="wait">⏳ WAIT</span></div>
-<div class="team"><span>⚽ Team 2: ______ vs ______</span><span class="wait">⏳ WAIT</span></div>
-<div class="team"><span>⚽ Team 3: ______ vs ______</span><span class="wait">⏳ WAIT</span></div>
-<a class="btn" href="https://wa.me/27836846150?text=Hi%20I%20want%20STANDARD%20TEAMS">UNLOCK STANDARD - R30 / $2</a>
+<p>Pay R30 / $2 - Get STANDARD code</p>
+<input id="code1" placeholder="Enter STANDARD Code">
+<button onclick="unlock1()">UNLOCK STANDARD</button>
+<div id="teams1" class="teams">
+<div class="team">Team 1 vs Team 2 - <span class="pending">⏳ Waiting</span></div>
+<div class="team">Team 3 vs Team 4 - <span class="pending">⏳ Waiting</span></div>
+<p>✅ = Win &nbsp; ❌ = Loss &nbsp; ⏳ = Waiting</p>
 </div>
+</div>
+
+<!-- 2. TRADE -->
 <div class="card">
 <h2>2. TRADE TICKET</h2>
-<div class="quote">"Patience is profit. Trade smart, not fast."</div>
-<div class="team"><span>⚽ Team 1: ______ vs ______</span><span class="wait">⏳ WAIT</span></div>
-<div class="team"><span>⚽ Team 2: ______ vs ______</span><span class="wait">⏳ WAIT</span></div>
-<div class="team"><span>⚽ Team 3: ______ vs ______</span><span class="wait">⏳ WAIT</span></div>
-<a class="btn" href="https://wa.me/27836846150?text=Hi%20I%20want%20TRADE%20TEAMS">UNLOCK TRADE - R30 / $2</a>
+<p>Pay R30 / $2 - Get TRADE code</p>
+<input id="code2" placeholder="Enter TRADE Code">
+<button onclick="unlock2()">UNLOCK TRADE</button>
+<div id="teams2" class="teams">
+<div class="team">Team 5 vs Team 6 - <span class="pending">⏳ Waiting</span></div>
+<div class="team">Team 7 vs Team 8 - <span class="pending">⏳ Waiting</span></div>
+<p>✅ = Win &nbsp; ❌ = Loss &nbsp; ⏳ = Waiting</p>
 </div>
-<div class="card" style="border:3px solid #d4af37">
-<h2>3. BANK TICKET ⭐ MOST TRUSTED</h2>
-<div class="quote">"BANK is not luck. BANK is plan."</div>
-<div class="team"><span>⭐ Team 1: ______ vs ______</span><span class="wait">⏳ WAIT</span></div>
-<div class="team"><span>⭐ Team 2: ______ vs ______</span><span class="wait">⏳ WAIT</span></div>
-<div class="team"><span>⭐ Team 3: ______ vs ______</span><span class="wait">⏳ WAIT</span></div>
-<a class="btn" href="https://wa.me/27836846150?text=Hi%20I%20want%20BANK%20TEAMS">UNLOCK BANK - R30 / $2</a>
 </div>
-<a class="back" href="index.html">← Back to Main Website</a>
-<p style="text-align:center;font-size:13px;color:#666">WhatsApp SA: +27 83 684 6150<br>WhatsApp DRC: +243 970 810 284<br>Email: danielnamuhindura@gmail.com</p>
+
+<!-- 3. BANK -->
+<div class="card">
+<h2>3. BANK TICKET ⭐</h2>
+<p>Pay R30 / $2 - Get BANK code</p>
+<input id="code3" placeholder="Enter BANK Code">
+<button onclick="unlock3()">UNLOCK BANK</button>
+<div id="teams3" class="teams">
+<div class="team">Team 9 vs Team 10 - <span class="win">✅ WIN</span></div>
+<div class="team">Team 11 vs Team 12 - <span class="loss">❌ LOSS</span></div>
+<p>✅ = Win &nbsp; ❌ = Loss &nbsp; ⏳ = Waiting</p>
 </div>
+</div>
+
+<script>
+function unlock1(){ if(document.getElementById('code1').value.trim() === 'STD30'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
+function unlock2(){ if(document.getElementById('code2').value.trim() === 'TRD30'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
+function unlock3(){ if(document.getElementById('code3').value.trim() === 'BNK30'){ document.getElementById('teams3').style.display='block'; alert('BANK Unlocked!'); } else { alert('Wrong BANK Code!'); } }
+</script>
+
+<p><a href="index.html">← Back to Main Shop</a></p>
 </body>
-  </html>
+</html>
