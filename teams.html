@@ -15,26 +15,11 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 .win{color:green;font-weight:bold}
 .loss{color:red;font-weight:bold}
 .pending{color:#cc9900;font-weight:bold}
-.livebox{background:#000;color:#fff;padding:15px;border-radius:15px;max-width:500px;margin:15px auto;text-align:left}
-.livebox h2{color:#00ff00;margin:0}
-.livebtn{background:#00c853;color:white;padding:13px;border:none;border-radius:10px;font-size:18px;font-weight:bold;width:100%;margin-top:10px}
-iframe{width:100%;height:600px;border:none;border-radius:10px;background:white}
 </style>
 </head>
 <body>
 <h1>BANKS TIPS ⭐</h1>
 <p><b>Enter your CODE to unlock your ticket teams.</b><br>No code? Pay first on main page, then WhatsApp us.</p>
-
-<!-- LIVE SCORE -->
-<div class="livebox">
-<h2>🔴 LIVE SCORES - LIVE NOW</h2>
-<p>See all your matches LIVE here! Scores update every minute!</p>
-<button class="livebtn" onclick="showLive()">🔴 CLICK TO SHOW LIVE SCORES</button>
-<div id="liveFrame" style="display:none;margin-top:10px">
-<iframe src="https://www.livescore.com/en/"></iframe>
-<p style="color:#fff;font-size:14px;text-align:center">If scores don't show, tap below:<br><a href="https://www.livescore.com/en/" target="_blank" style="color:#00ff00;font-weight:bold">OPEN LIVE SCORES IN NEW TAB ↗️</a></p>
-</div>
-</div>
 
 <!-- 1. STANDARD -->
 <div class="card">
@@ -128,6 +113,13 @@ iframe{width:100%;height:600px;border:none;border-radius:10px;background:white}
 </div>
 
 <script>
-function showLive(){ document.getElementById('liveFrame').style.display='block'; }
 function unlock1(){ if(document.getElementById('code1').value.trim() === 'STD40'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
-function unlock2(){ if(document.getElementById('code2').value.trim() === 'TAD200'){ document.getElement
+function unlock2(){ if(document.getElementById('code2').value.trim() === 'TAD200'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
+function unlock3(){ if(document.getElementById('code3').value.trim() === 'BNK100'){ document.getElementById('teams3').style.display='block'; alert('BANK Unlocked!'); } else { alert('Wrong BANK Code!'); } }
+</script>
+
+<br><br>
+<a href="index.html" style="display:block;background:#0b3d91;color:white;padding:18px;text-align:center;font-size:22px;font-weight:bold;border-radius:12px;text-decoration:none;">⬅️ BACK TO MAIN WEBSITE</a>
+<br><br>
+</body>
+</html>
