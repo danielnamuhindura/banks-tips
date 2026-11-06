@@ -1,102 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Banks Tips - Smart Banking SA & DRC</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banks Tips - SA | DRC | World</title>
 <style>
-body{font-family:Arial;margin:0;background:#f4f6f8;color:#222}
-header{background:#0b3d91;color:white;padding:25px;text-align:center}
-header h1{margin:0;font-size:30px}
-header p{margin:5px 0 0}
-nav{background:#ffcc00;padding:12px;text-align:center}
-nav a{margin:0 8px;color:#0b3d91;font-weight:bold;text-decoration:none}
-.hero{background:white;padding:25px;text-align:center}
-.hero h2{color:#0b3d91}
-.btn{background:#25D366;color:white;padding:13px 20px;border-radius:8px;text-decoration:none;display:inline-block;font-weight:bold;margin:5px}
-.btn2{background:#0b3d91;color:white;padding:13px 20px;border-radius:8px;text-decoration:none;display:inline-block;font-weight:bold;margin:5px}
-.box{background:white;margin:15px;padding:18px;border-radius:12px}
-.box h3{color:#0b3d91;margin-top:0}
-.lock{background:#fff3cd;border:2px dashed #ff9900}
-input{padding:12px;width:80%;border-radius:8px;border:1px solid #ccc;font-size:16px;text-align:center}
-button{padding:12px 20px;background:#0b3d91;color:white;border:none;border-radius:8px;font-size:16px;margin-top:10px}
-footer{background:#0b3d91;color:white;text-align:center;padding:15px}
+body{margin:0;font-family:Arial,sans-serif;background:#0A1A3A;color:#fff}
+.top{background:#FFC107;color:#0A1A3A;text-align:center;padding:8px;font-weight:bold}
+header{text-align:center;padding:30px 15px;background:linear-gradient(180deg,#0A1A3A,#123A7A)}
+h1{font-size:34px;margin:5px;color:#FFC107}
+p{color:#E8E8E8;line-height:1.5}
+.box{background:#fff;color:#222;border-radius:15px;padding:20px;margin:15px}
+h2{color:#0A1A3A;text-align:center}
+.ticket{border:2px solid #FFC107;border-radius:12px;padding:15px;margin:12px 0;text-align:center}
+.ticket b{font-size:22px;color:#0A1A3A}
+.price{font-size:26px;color:#0A9A4A;font-weight:bold}
+.pay{background:#E8FFF0;border-radius:12px;padding:15px;margin:12px 0;color:#222}
+.btn{display:block;text-align:center;background:#25D366;color:#fff;padding:14px;border-radius:10px;text-decoration:none;font-weight:bold;margin:10px 0;font-size:18px}
+.btn-gold{background:#FFC107;color:#0A1A3A}
+footer{text-align:center;padding:20px;font-size:13px;color:#ccc}
 </style>
 </head>
 <body>
-
+<div class="top">SOUTH AFRICA | CONGO | NIGERIA | KENYA | UGANDA | WORLD</div>
 <header>
-<h1>🏦 BANKS TIPS</h1>
-<p>Smart Banking • Save Money • Avoid Fees</p>
-<p>South Africa 🇿🇦 | Congo 🇨🇩</p>
-</header>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Tips</a>
-<a href="#">Banks</a>
-<a href="#">Contact</a>
-</nav>
-
-<div class="hero">
-<h2>Welcome to Banks Tips</h2>
-<p>We help you choose the best bank, save on fees, and grow your money in SA & DRC.</p>
-<a class="btn" href="https://wa.me/277836846150">WhatsApp SA 🇿🇦</a>
-<a class="btn" href="https://wa.me/243970810284">WhatsApp DRC 🇨🇩</a>
-</div>
-
-<div class="box">
-<h3>🏦 Best Banks</h3>
-<p><b>Capitec</b> - Low fees, easy banking</p>
-<p><b>FNB</b> - Great app and rewards</p>
-<p><b>Standard Bank</b> - Trusted, big network</p>
-<p><b>Absa</b> - Good for business</p>
-<p><b>Nedbank</b> - Good savings</p>
-<p><b>TymeBank</b> - No monthly fees</p>
-<p><b>Rawbank / EquityBCDC (DRC)</b> - Best in Congo</p>
-</div>
-
-<div class="box lock">
-<h3>🔒 5 SECRET BEST TIPS - LOCKED</h3>
-<p>Enter password to unlock the 5 best tips:</p>
-<input type="password" id="pass" placeholder="Enter Password">
-<br>
-<button onclick="unlock()">Unlock Tips 🔓</button>
-<p id="msg" style="color:red;font-weight:bold"></p>
-<div id="secret" style="display:none;text-align:left">
-<hr>
-<p><b>1.</b> Open a separate savings account - never touch it, save every month even R100.</p>
-<p><b>2.</b> Never use another bank's ATM - you pay R15-R30 extra every time!</p>
-<p><b>3.</b> Set debit order just after payday - pay yourself FIRST.</p>
-<p><b>4.</b> Never share PIN, OTP or password - bank will NEVER ask you for it.</p>
-<p><b>5.</b> Check your statement monthly - report unknown charges immediately.</p>
-<p style="color:green"><b>✅ Unlocked! Share this page with friends.</b></p>
-</div>
-</div>
-
-<script>
-function unlock(){
-var p=document.getElementById("pass").value;
-if(p=="TIPS2026"){
-document.getElementById("secret").style.display="block";
-document.getElementById("msg").innerHTML="✅ Correct! Tips Unlocked!";
-}else{
-document.getElementById("msg").innerHTML="❌ Wrong password. Try again.";
-}
-}
-</script>
-
-<div class="box">
-<h3>📞 Contact Us</h3>
-<p><b>South Africa 🇿🇦</b><br>WhatsApp: +27 783 684 6150<br><a class="btn" href="https://wa.me/277836846150">Chat on WhatsApp SA</a></p>
-<p><b>Congo 🇨🇩</b><br>WhatsApp: +243 970 810 284<br><a class="btn" href="https://wa.me/243970810284">Chat on WhatsApp DRC</a></p>
-<p>Email: info@bankstips.co.za</p>
-<p>Location: Soweto, Gauteng, South Africa</p>
-</div>
-
-<footer>
-<p>© 2026 Banks Tips - All Rights Reserved</p>
-<p>Password for VIP Tips: TIPS2026</p>
-</footer>
-
-</body>
-</html>
+<h1>BANKS TIPS</h1>
+<p>We help you choose the best bank, save on fees, and grow your money.</p>
+<p><b>Professional . Trusted . Fast</b></p>
