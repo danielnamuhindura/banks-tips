@@ -18,7 +18,6 @@ label{font-weight:bold}
 <label>MASTER PASSWORD</label><br>
 <input type="password" id="master" placeholder="Enter Master Password">
 <button onclick="login()">LOGIN</button>
-<p style="font-size:13px;color:#666">Default Master: BANKS123</p>
 </div>
 <div id="panel" class="card" style="display:none">
 <label>1. STANDARD CODE</label><br>
@@ -33,7 +32,7 @@ label{font-weight:bold}
 </div>
 <script>
 function login(){
-  if(document.getElementById('master').value === 'BANKS123'){
+  if(document.getElementById('master').value === 'Daniel'){
     document.getElementById('login').style.display='none';
     document.getElementById('panel').style.display='block';
     document.getElementById('c1').value = localStorage.getItem('code1') || 'DARD16';
