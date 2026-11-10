@@ -18,7 +18,6 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 <h1>BANKS TIPS ⭐</h1>
 <p><b>Enter your CODE to unlock your ticket teams.</b><br>No code? Pay first on main page, then WhatsApp us.</p>
 
-<!-- 1. STANDARD - EMPTY - YOU WILL PUT TEAMS LATER -->
 <div class="card">
 <h2>1. STANDARD TICKET</h2>
 <p>Pay R30 / $2 - Get STANDARD code</p>
@@ -29,7 +28,6 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 </div>
 </div>
 
-<!-- 2. TRADE - EMPTY - YOU WILL PUT TEAMS LATER -->
 <div class="card">
 <h2>2. TRADE TICKET</h2>
 <p>Pay R30 / $2 - Get TRADE code</p>
@@ -40,7 +38,6 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 </div>
 </div>
 
-<!-- 3. BANK - EMPTY - YOU WILL PUT TEAMS LATER -->
 <div class="card">
 <h2>3. BANK TICKET ⭐</h2>
 <p>Pay R30 / $2 - Get BANK code</p>
@@ -52,10 +49,9 @@ button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;bor
 </div>
 
 <script>
-// !!! YOU PUT YOUR OWN CODES HERE - I WILL NOT PUT CODES !!!
-function unlock1(){ if(document.getElementById('code1').value.trim() === 'PUT_YOUR_STANDARD_CODE_HERE'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
-function unlock2(){ if(document.getElementById('code2').value.trim() === 'PUT_YOUR_TRADE_CODE_HERE'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
-function unlock3(){ if(document.getElementById('code3').value.trim() === 'PUT_YOUR_BANK_CODE_HERE'){ document.getElementById('teams3').style.display='block'; alert('BANK Unlocked!'); } else { alert('Wrong BANK Code!'); } }
+function unlock1(){ if(document.getElementById('code1').value.trim().toUpperCase() === 'STD100'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
+function unlock2(){ if(document.getElementById('code2').value.trim().toUpperCase() === 'TRD200'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
+function unlock3(){ if(document.getElementById('code3').value.trim().toUpperCase() === 'BNQ300'){ document.getElementById('teams3').style.display='block'; alert('BANK Unlocked!'); } else { alert('Wrong BANK Code!'); } }
 </script>
 
 <br><br>
