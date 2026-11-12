@@ -33,13 +33,13 @@ td{padding:7px;border-bottom:1px solid #ddd}
 <b>ODDS: 33,721.71</b><br>
 <b>MARKET: 1X2 + DOUBLE CHANCE</b><br>
 <b>HOME WIN / AWAY WIN / DRAW OR AWAY</b><br>
-<span style="font-size:13px;">1 = Home Win | 2 = Away Win | X2 = Draw Or Away Win | R5 = R216,147.37 With Boost</span>
+<span style="font-size:13px;">1 = Home Win | 2 = Away Win | X2 = Draw Or Away Win</span>
 </div>
 <input type="password" id="code1" placeholder="Enter STANDARD Code" autocomplete="off">
 <button onclick="unlock1()">UNLOCK STANDARD</button>
 <div id="teams1" class="teams">
 <div class="hot">🔥 42 TEAMS HOT 🔥</div>
-<p style="text-align:center;font-size:17px;font-weight:bold;">42 TEAMS | ODDS: 33,721.71 | R5 = R216,147.37</p>
+<p style="text-align:center;font-size:17px;font-weight:bold;">42 TEAMS | ODDS: 33,721.71</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>1X2</th><th>ODDS</th></tr>
 <tr><td>1</td><td>Congo DR vs. Sierra Leone</td><td class="win">1</td><td>1.20</td></tr>
@@ -85,7 +85,7 @@ td{padding:7px;border-bottom:1px solid #ddd}
 <tr><td>41</td><td>Paris Saint-Germain vs. FC Lorient</td><td class="win">1</td><td>1.22</td></tr>
 <tr><td>42</td><td>RC Deportivo de A Coruna vs. FC Barcelona</td><td class="win">2</td><td>1.31</td></tr>
 </table>
-<p style="text-align:center;font-weight:bold;">Total Odds: 33,721.71 | R5 = R168,608.57 | With Boost = R216,147.37</p>
+<p style="text-align:center;font-weight:bold;">Total Odds: 33,721.71</p>
 </div>
 </div>
 
@@ -96,14 +96,13 @@ td{padding:7px;border-bottom:1px solid #ddd}
 <b>🔥 44 TEAMS HOT 🔥</b><br>
 <b>ODDS: 111,848.28</b><br>
 <b>MARKET: 1X2 + UNDER GOALS</b><br>
-<b>BOOKING CODE: BW81DA69D2</b><br>
-<span style="font-size:13px;">1 = Home Win | 2 = Away Win | Under (4.5) = Less Than 5 Goals | R4.50 = R633,970.19 With Boost</span>
+<span style="font-size:13px;">1 = Home Win | 2 = Away Win | Under (4.5) = Less Than 5 Goals</span>
 </div>
 <input type="password" id="code2" placeholder="Enter TRADE Code" autocomplete="off">
 <button onclick="unlock2()">UNLOCK TRADE</button>
 <div id="teams2" class="teams">
 <div class="hot">🔥 44 TEAMS HOT 🔥</div>
-<p style="text-align:center;font-size:17px;font-weight:bold;">44 TEAMS | ODDS: 111,848.28 | R4.50 = R633,970.19</p>
+<p style="text-align:center;font-size:17px;font-weight:bold;">44 TEAMS | ODDS: 111,848.28</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>1X2</th><th>UNDER GOALS</th><th>ODDS</th></tr>
 <tr><td>1</td><td>Ghana vs. Somalia</td><td>-</td><td>Under (4.5)</td><td>1.26</td></tr>
@@ -151,7 +150,7 @@ td{padding:7px;border-bottom:1px solid #ddd}
 <tr><td>43</td><td>Cagliari Calcio vs. AC Milan</td><td class="win">2</td><td>-</td><td>1.65</td></tr>
 <tr><td>44</td><td>Check Slip - 44th Leg</td><td class="win">-</td><td>-</td><td>-</td></tr>
 </table>
-<p style="text-align:center;font-weight:bold;">Total Odds: 111,848.28 | R4.50 = R503,317.28 | With Boost 160% = R633,970.19 | Booking: BW81DA69D2</p>
+<p style="text-align:center;font-weight:bold;">Total Odds: 111,848.28</p>
 </div>
 </div>
 
@@ -164,10 +163,11 @@ function unlock2(){ if(document.getElementById('code2').value.trim().toUpperCase
 <a href="index.html" style="display:block;background:#0b3d91;color:white;padding:18px;text-align:center;font-size:22px;font-weight:bold;border-radius:12px;text-decoration:none;">⬅️ BACK TO MAIN WEBSITE</a>
 <br><br>
 
-<!-- TRACKING - NO ACCOUNT NEEDED - DOES NOT DISTURB WEBSITE -->
-<div style="text-align:center;font-size:12px;color:#888;margin-top:10px;">Visits: <img src="https://visitor-badge.laobi.icu/badge?page_id=bankstips-teams-standard-trade" alt="visits" style="vertical-align:middle;"></div>
-<img src="https://visitor-badge.laobi.icu/badge?page_id=bankstips-teams-standard" style="display:none;" alt="">
-<img src="https://visitor-badge.laobi.icu/badge?page_id=bankstips-teams-trade" style="display:none;" alt="">
+<!-- TRACKING - NO ACCOUNT NEEDED -->
+<div id="visitBox" style="text-align:center;font-size:12px;color:#888;margin-top:10px;">Visits: <img id="visitImg" src="https://visitor-badge.laobi.icu/badge?page_id=bankstips-teams-standard-trade" alt="visits" style="vertical-align:middle;"></div>
+<script>
+if(window.location.search.includes('me=1')){ document.getElementById('visitBox').innerHTML = 'Owner View - Not Counted'; }
+</script>
 
 </body>
 </html>
