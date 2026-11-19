@@ -1,207 +1,73 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>STANDARD + TRADE + BANKER - BANKS TIPS</title>
-<style>
-body{font-family:Arial;margin:0;background:#f2f2f2;text-align:center;padding:10px}
-h1{color:#0b3d91}
-.card{background:white;margin:15px auto;padding:20px;border-radius:15px;max-width:650px;text-align:left}
-.card h2{margin:0;color:#0b3d91}
-input{width:90%;padding:12px;margin-top:10px;font-size:18px;text-align:center}
-button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold}
-.teams{display:none;margin-top:15px;background:#d4edda;padding:15px;border-radius:10px;border:2px solid #008000}
-.hot{background:#008000;color:white;padding:10px;border-radius:10px;text-align:center;font-size:20px;font-weight:bold;margin-bottom:10px}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th{background:#0b3d91;color:white;padding:8px}
-td{padding:7px;border-bottom:1px solid #ddd}
-.win{color:#0b3d91;font-weight:bold}
-.topbtn{display:inline-block;background:#0b3d91;color:white;padding:12px 15px;margin:5px;border-radius:10px;text-decoration:none;font-weight:bold}
-.circles{display:flex;justify-content:center;gap:12px;margin-top:10px}
-.circ{width:58px;height:58px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
-.circ b{font-size:16px;line-height:1}
-.circ small{font-size:9px;font-weight:bold;line-height:1.1}
-.green{background:#008000;color:#fff}
-.orange{background:#ff9800;color:#fff}
-.winbanner{background:#008000;color:#fff;padding:8px;border-radius:10px;text-align:center;font-size:15px;font-weight:bold;margin-top:10px}
-.mascot-box{background:#0b3d91;color:white;padding:18px;border-radius:18px;max-width:650px;margin:10px auto;text-align:center}
-.mascot-box .lion{font-size:70px;line-height:1}
-.mascot-box h1{color:white;margin:5px 0 0 0;font-size:32px}
-.mascot-box p{margin:5px 0 0 0;font-size:15px}
-.mascot-badge{background:#FFD700;color:#0b3d91;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:13px;display:inline-block;margin-top:8px}
-</style>
-</head>
-<body>
-
-<div class="mascot-box">
-<div class="lion">🦁</div>
-<h1>BANKS TIPS ⭐</h1>
-<p><b>Hi, I'm BANKY! I protect your ticket!</b></p>
-<span class="mascot-badge">✅ TIPS • PLAY RESPONSIBLY • 18+</span>
-</div>
-
-<p><b>Enter your CODE to unlock your ticket teams.</b></p>
-<a class="topbtn" href="#standard">1. STANDARD</a>
-<a class="topbtn" href="#trade">2. TRADE</a>
-<a class="topbtn" href="#banker">3. BANKER</a>
-
-<div class="card" id="standard">
-<h2>🦁 1. STANDARD TICKET</h2>
-<p>Pay R30 / $2 - Get STANDARD code</p>
-<div class="winbanner">✅ STANDARD TICKET - 37 TEAMS ✅</div>
-<div class="circles"><div class="circ green"><b>37 🔥</b><small>HOT</small></div><div class="circ orange"><b>37</b><small>STILL<br>PLAYING</small></div></div>
-<div style="background:#d4edda;padding:12px;border-radius:10px;text-align:center;margin-top:10px;border:2px solid #008000;">
-<b>🔥 37 TEAMS 🔥</b><br>
-<b>ODDS: 151.27</b><br>
-<b>MARKET: 1ST HALF - UNDER 2.5 GOALS</b><br>
-<span style="font-size:13px;">1st Half must have 0, 1 or 2 goals only</span>
-</div>
-<input type="password" id="code1" placeholder="Enter STANDARD Code" autocomplete="off">
-<button onclick="unlock1()">UNLOCK STANDARD</button>
-<div id="teams1" class="teams">
-<div class="hot">🔥 37 TEAMS - STANDARD 🔥</div>
-<p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">37 TEAMS | ODDS: 151.27</p>
-<table>
-<tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
-<tr><td>1</td><td>AGF Aarhus vs. Lyngby BK</td><td class="win">Under 2.5 - 1st Half</td><td>1.15</td></tr>
-<tr><td>2</td><td>Hellas Verona vs. Cesena FC</td><td class="win">Under 2.5 - 1st Half</td><td>1.12</td></tr>
-<tr><td>3</td><td>Troyes AC vs. Le Havre AC</td><td class="win">Under 2.5 - 1st Half</td><td>1.10</td></tr>
-<tr><td>4</td><td>Cercle Brugge vs. KVC Westerlo</td><td class="win">Under 2.5 - 1st Half</td><td>1.18</td></tr>
-<tr><td>5</td><td>Genclerbirligi SK vs. Gaziantep FK</td><td class="win">Under 2.5 - 1st Half</td><td>1.11</td></tr>
-<tr><td>6</td><td>Millwall FC vs. Queens Park Rangers</td><td class="win">Under 2.5 - 1st Half</td><td>1.12</td></tr>
-<tr><td>7</td><td>Norwich City vs. Cardiff City</td><td class="win">Under 2.5 - 1st Half</td><td>1.24</td></tr>
-<tr><td>8</td><td>Southampton FC vs. Derby County</td><td class="win">Under 2.5 - 1st Half</td><td>1.16</td></tr>
-<tr><td>9</td><td>Monchengladbach vs. Borussia Dortmund</td><td class="win">Under 2.5 - 1st Half</td><td>1.18</td></tr>
-<tr><td>10</td><td>SV 07 Elversberg vs. SC Freiburg</td><td class="win">Under 2.5 - 1st Half</td><td>1.15</td></tr>
-<tr><td>11</td><td>HamKam vs. Fredrikstad FK</td><td class="win">Under 2.5 - 1st Half</td><td>1.14</td></tr>
-<tr><td>12</td><td>Falkirk FC vs. St. Johnstone FC</td><td class="win">Under 2.5 - 1st Half</td><td>1.12</td></tr>
-<tr><td>13</td><td>Hibernian FC vs. Dundee United</td><td class="win">Under 2.5 - 1st Half</td><td>1.15</td></tr>
-<tr><td>14</td><td>Kilmarnock FC vs. Aberdeen FC</td><td class="win">Under 2.5 - 1st Half</td><td>1.13</td></tr>
-<tr><td>15</td><td>Aston Villa vs. Sunderland AFC</td><td class="win">Under 2.5 - 1st Half</td><td>1.11</td></tr>
-<tr><td>16</td><td>Royal Charleroi SC vs. St. Truidense VV</td><td class="win">Under 2.5 - 1st Half</td><td>1.16</td></tr>
-<tr><td>17</td><td>Solihull Moors FC vs. Altrincham FC</td><td class="win">Under 2.5 - 1st Half</td><td>1.14</td></tr>
-<tr><td>18</td><td>Tromsoe IL vs. Viking FK</td><td class="win">Under 2.5 - 1st Half</td><td>1.19</td></tr>
-<tr><td>19</td><td>Amed Sportif vs. Caykur Rizespor</td><td class="win">Under 2.5 - 1st Half</td><td>1.15</td></tr>
-<tr><td>20</td><td>Como 1907 vs. Cagliari Calcio</td><td class="win">Under 2.5 - 1st Half</td><td>1.17</td></tr>
-<tr><td>21</td><td>Lazio Rome vs. US Lecce</td><td class="win">Under 2.5 - 1st Half</td><td>1.15</td></tr>
-<tr><td>22</td><td>Ascoli Calcio vs. L.R. Vicenza</td><td class="win">Under 2.5 - 1st Half</td><td>1.11</td></tr>
-<tr><td>23</td><td>Modena FC vs. Juve Stabia</td><td class="win">Under 2.5 - 1st Half</td><td>1.12</td></tr>
-<tr><td>24</td><td>Eintracht Frankfurt vs. TSG Hoffenheim</td><td class="win">Under 2.5 - 1st Half</td><td>1.23</td></tr>
-<tr><td>25</td><td>Aldershot Town FC vs. Scunthorpe United</td><td class="win">Under 2.5 - 1st Half</td><td>1.14</td></tr>
-<tr><td>26</td><td>Barrow AFC vs. Carlisle United</td><td class="win">Under 2.5 - 1st Half</td><td>1.13</td></tr>
-<tr><td>27</td><td>FC Halifax Town vs. Woking FC</td><td class="win">Under 2.5 - 1st Half</td><td>1.12</td></tr>
-<tr><td>28</td><td>Kocaelispor vs. Fenerbahce Istanbul</td><td class="win">Under 2.5 - 1st Half</td><td>1.13</td></tr>
-<tr><td>29</td><td>US Catanzaro vs. Palermo FC</td><td class="win">Under 2.5 - 1st Half</td><td>1.15</td></tr>
-<tr><td>30</td><td>Parma Calcio vs. AS Roma</td><td class="win">Under 2.5 - 1st Half</td><td>1.16</td></tr>
-<tr><td>31</td><td>KRC Genk vs. RAAL La Louviere</td><td class="win">Under 2.5 - 1st Half</td><td>1.16</td></tr>
-<tr><td>32</td><td>Newcastle United vs. Arsenal</td><td class="win">Under 2.5 - 1st Half</td><td>1.12</td></tr>
-<tr><td>33</td><td>Racing Club De Lens vs. Toulouse FC</td><td class="win">Under 2.5 - 1st Half</td><td>1.14</td></tr>
-<tr><td>34</td><td>AS Monaco vs. AJ Auxerre</td><td class="win">Under 2.5 - 1st Half</td><td>1.17</td></tr>
-<tr><td>35</td><td>Strasbourg Alsace vs. Stade Brest 29</td><td class="win">Under 2.5 - 1st Half</td><td>1.13</td></tr>
-<tr><td>36</td><td>SV Zulte Waregem vs. Royal Antwerp FC</td><td class="win">Under 2.5 - 1st Half</td><td>1.12</td></tr>
-<tr><td>37</td><td>Juventus Turin vs. Venezia FC</td><td class="win">Under 2.5 - 1st Half</td><td>1.14</td></tr>
-</table>
-<p style="text-align:center;font-weight:bold;">Total Odds: 151.27 | R10 = R1,512.71</p>
-<p style="text-align:center;font-size:12px;">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
-</div>
-</div>
-
 <div class="card" id="trade">
 <h2>🦁 2. TRADE TICKET</h2>
 <p>Pay R30 / $2 - Get TRADE code</p>
-<div class="winbanner">✅ TRADE TICKET - 26 TEAMS HOT ✅</div>
-<div class="circles"><div class="circ green"><b>26 🔥</b><small>HOT</small></div><div class="circ orange"><b>26</b><small>STILL<br>PLAYING</small></div></div>
+<div class="winbanner">✅ TRADE TICKET - 50 TEAMS ✅</div>
+<div class="circles"><div class="circ green"><b>50 🔥</b><small>HOT</small></div><div class="circ orange"><b>50</b><small>STILL<br>PLAYING</small></div></div>
 <div style="background:#d4edda;padding:12px;border-radius:10px;text-align:center;margin-top:10px;border:2px solid #008000;">
-<b>🔥 26 TEAMS HOT 🔥</b><br>
-<b>ODDS: 420,820.08</b><br>
-<b>MARKET: FULL TIME - 1X2</b><br>
-<b>PAYOUT: R1,641,198.33 | STAKE: R3.00</b>
+<b>🔥 50 TEAMS 🔥</b><br>
+<b>ODDS: 2,634.93</b><br>
+<b>MARKET: FULL TIME - UNDER 4.5 / 5.5 TOTAL GOALS</b><br>
+<span style="font-size:13px;">Full Time must have under 4.5 goals (or 5.5 / 3.5 where shown)</span>
 </div>
 <input type="password" id="code2" placeholder="Enter TRADE Code" autocomplete="off">
 <button onclick="unlock2()">UNLOCK TRADE</button>
 <div id="teams2" class="teams">
-<div class="hot">🔥 26 TEAMS HOT 🔥</div>
-<p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">26 TEAMS | ODDS: 420,820.08</p>
+<div class="hot">🔥 50 TEAMS - TRADE 🔥</div>
+<p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">50 TEAMS | ODDS: 2,634.93</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
-<tr><td>1</td><td>Kawasaki Frontale vs. Avispa Fukuoka</td><td class="win">Kawasaki Frontale | 1</td><td>0.90</td></tr>
-<tr><td>2</td><td>Kolos Kovalivka vs. FC Kharkiv</td><td class="win">FC Kharkiv | 2</td><td>0.80</td></tr>
-<tr><td>3</td><td>Man City vs. Fulham</td><td class="win">Man City | 1</td><td>0.40</td></tr>
-<tr><td>4</td><td>Puskas Akademia FC Felcsut vs. MTK Budapest</td><td class="win">Puskas Akademia | 1</td><td>1.00</td></tr>
-<tr><td>5</td><td>Tromso vs. Viking FK</td><td class="win">Viking FK | 2</td><td>0.85</td></tr>
-<tr><td>6</td><td>Lazio vs. Lecce</td><td class="win">Lazio | 1</td><td>0.40</td></tr>
-<tr><td>7</td><td>NK Lokomotiva Zagreb vs. Hajduk Split</td><td class="win">Hajduk Split | 2</td><td>0.70</td></tr>
-<tr><td>8</td><td>Sigma Olomouc vs. Slavia Prague</td><td class="win">Slavia Prague | 2</td><td>0.75</td></tr>
-<tr><td>9</td><td>SV 07 Elversberg vs. Freiburg</td><td class="win">Freiburg | 2</td><td>1.02</td></tr>
-<tr><td>10</td><td>Monchengladbach vs. Dortmund</td><td class="win">Dortmund | 2</td><td>0.60</td></tr>
-<tr><td>11</td><td>Falkirk vs. St Johnstone</td><td class="win">Falkirk | 1</td><td>0.85</td></tr>
-<tr><td>12</td><td>Peterhead FC vs. East Kilbride FC</td><td class="win">East Kilbride FC | 2</td><td>0.70</td></tr>
-<tr><td>13</td><td>NEC Nijmegen vs. PSV</td><td class="win">PSV | 2</td><td>0.75</td></tr>
-<tr><td>14</td><td>Young Boys vs. Thun</td><td class="win">Young Boys | 1</td><td>0.40</td></tr>
-<tr><td>15</td><td>Lugano vs. Grasshopper</td><td class="win">Lugano | 1</td><td>-</td></tr>
-<tr><td>16</td><td>Newcastle vs. Arsenal</td><td class="win">Arsenal | 2</td><td>0.55</td></tr>
-<tr><td>17</td><td>Grazer AK 1902 vs. Rapid Wien</td><td class="win">Rapid Wien | 2</td><td>0.45</td></tr>
-<tr><td>18</td><td>KV Mechelen vs. Club Brugge</td><td class="win">Club Brugge | 2</td><td>0.40</td></tr>
-<tr><td>19</td><td>Motherwell vs. Rangers</td><td class="win">Rangers | 2</td><td>0.55</td></tr>
-<tr><td>20</td><td>Sparta Rotterdam vs. AZ Alkmaar</td><td class="win">AZ Alkmaar | 2</td><td>0.70</td></tr>
-<tr><td>21</td><td>Kortrijk vs. St Gilloise</td><td class="win">St Gilloise | 2</td><td>0.40</td></tr>
-<tr><td>22</td><td>Racing de Santander vs. Real Sociedad</td><td class="win">Real Sociedad | 2</td><td>1.10</td></tr>
-<tr><td>23</td><td>FC UTA Arad vs. CS Universitatea Craiova</td><td class="win">CS Universitatea Craiova | 2</td><td>0.70</td></tr>
-<tr><td>24</td><td>Austria Vienna vs. RB Salzburg</td><td class="win">RB Salzburg | 2</td><td>0.65</td></tr>
-<tr><td>25</td><td>Marseille vs. Le Mans FC</td><td class="win">Marseille | 1</td><td>0.45</td></tr>
-<tr><td>26</td><td>Getafe vs. Atl Madrid</td><td class="win">Atl Madrid | 2</td><td>0.65</td></tr>
+<tr><td>1</td><td>Troyes AC vs. Le Havre AC</td><td class="win">Under 4.5 - Total</td><td>1.13</td></tr>
+<tr><td>2</td><td>Athletic Bilbao vs. Espanyol Barcelona</td><td class="win">Under 4.5 - Total</td><td>1.13</td></tr>
+<tr><td>3</td><td>Como 1907 vs. Cagliari Calcio</td><td class="win">Under 4.5 - Total</td><td>1.21</td></tr>
+<tr><td>4</td><td>Lazio Rome vs. US Lecce</td><td class="win">Under 4.5 - Total</td><td>1.20</td></tr>
+<tr><td>5</td><td>Aston Villa vs. Sunderland AFC</td><td class="win">Under 4.5 - Total</td><td>1.13</td></tr>
+<tr><td>6</td><td>AFC Bournemouth vs. Nottingham Forest</td><td class="win">Under 4.5 - Total</td><td>1.13</td></tr>
+<tr><td>7</td><td>Chelsea vs. Leeds United</td><td class="win">Under 4.5 - Total</td><td>1.15</td></tr>
+<tr><td>8</td><td>Coventry City vs. Crystal Palace</td><td class="win">Under 4.5 - Total</td><td>1.17</td></tr>
+<tr><td>9</td><td>Tottenham vs. Ipswich Town</td><td class="win">Under 4.5 - Total</td><td>1.20</td></tr>
+<tr><td>10</td><td>Rayo Vallecano vs. Valencia CF</td><td class="win">Under 4.5 - Total</td><td>1.08</td></tr>
+<tr><td>11</td><td>OGC Nice vs. Paris Saint-Germain</td><td class="win">Under 4.5 - Total</td><td>1.32</td></tr>
+<tr><td>12</td><td>Parma Calcio vs. AS Roma</td><td class="win">Under 4.5 - Total</td><td>1.20</td></tr>
+<tr><td>13</td><td>Newcastle United vs. Arsenal</td><td class="win">Under 4.5 - Total</td><td>1.16</td></tr>
+<tr><td>14</td><td>Sevilla FC vs. Real Betis Seville</td><td class="win">Under 4.5 - Total</td><td>1.15</td></tr>
+<tr><td>15</td><td>SSC Napoli vs. Torino FC</td><td class="win">Under 4.5 - Total</td><td>1.16</td></tr>
+<tr><td>16</td><td>Racing Club De Lens vs. Toulouse FC</td><td class="win">Under 4.5 - Total</td><td>1.18</td></tr>
+<tr><td>17</td><td>Strasbourg Alsace vs. Stade Brest 29</td><td class="win">Under 4.5 - Total</td><td>1.19</td></tr>
+<tr><td>18</td><td>AS Monaco vs. AJ Auxerre</td><td class="win">Under 4.5 - Total</td><td>1.24</td></tr>
+<tr><td>19</td><td>Real Madrid vs. RC Celta de Vigo</td><td class="win">Under 5.5 - Total</td><td>1.12</td></tr>
+<tr><td>20</td><td>Juventus Turin vs. Venezia FC</td><td class="win">Under 4.5 - Total</td><td>1.18</td></tr>
+<tr><td>21</td><td>FC Barcelona vs. Villarreal CF</td><td class="win">Under 5.5 - Total</td><td>1.27</td></tr>
+<tr><td>22</td><td>Hull City vs. Brighton</td><td class="win">Under 4.5 - Total</td><td>1.17</td></tr>
+<tr><td>23</td><td>Paris FC vs. Angers SCO</td><td class="win">Under 4.5 - Total</td><td>1.18</td></tr>
+<tr><td>24</td><td>Racing Santander vs. Real Sociedad</td><td class="win">Under 4.5 - Total</td><td>1.28</td></tr>
+<tr><td>25</td><td>FC Lorient vs. Stade Rennais FC</td><td class="win">Under 4.5 - Total</td><td>1.14</td></tr>
+<tr><td>26</td><td>AC Milan vs. Frosinone Calcio</td><td class="win">Under 5.5 - Total</td><td>1.15</td></tr>
+<tr><td>27</td><td>CA Osasuna vs. Malaga CF</td><td class="win">Under 4.5 - Total</td><td>1.10</td></tr>
+<tr><td>28</td><td>AC Monza vs. ACF Fiorentina</td><td class="win">Under 4.5 - Total</td><td>1.19</td></tr>
+<tr><td>29</td><td>Brentford FC vs. Everton FC</td><td class="win">Under 4.5 - Total</td><td>1.15</td></tr>
+<tr><td>30</td><td>Levante UD vs. Elche CF</td><td class="win">Under 4.5 - Total</td><td>1.17</td></tr>
+<tr><td>31</td><td>Venezia FC vs. Bologna FC</td><td class="win">Under 4.5 - Total</td><td>1.13</td></tr>
+<tr><td>32</td><td>Stade Brest 29 vs. Paris FC</td><td class="win">Under 4.5 - Total</td><td>1.13</td></tr>
+<tr><td>33</td><td>Nottingham Forest vs. Chelsea</td><td class="win">Under 4.5 - Total</td><td>1.15</td></tr>
+<tr><td>34</td><td>Levante UD vs. Racing Santander</td><td class="win">Under 4.5 - Total</td><td>1.26</td></tr>
+<tr><td>35</td><td>Real Betis Seville vs. Rayo Vallecano</td><td class="win">Under 4.5 - Total</td><td>1.21</td></tr>
+<tr><td>36</td><td>Leeds United vs. Coventry City</td><td class="win">Under 4.5 - Total</td><td>1.13</td></tr>
+<tr><td>37</td><td>Manchester United vs. Brentford FC</td><td class="win">Under 5.5 - Total</td><td>1.07</td></tr>
+<tr><td>38</td><td>Malaga CF vs. Athletic Bilbao</td><td class="win">Under 4.5 - Total</td><td>1.13</td></tr>
+<tr><td>39</td><td>Angers SCO vs. Racing Club De Lens</td><td class="win">Under 4.5 - Total</td><td>1.19</td></tr>
+<tr><td>40</td><td>Torino FC vs. Lazio Rome</td><td class="win">Under 4.5 - Total</td><td>1.13</td></tr>
+<tr><td>41</td><td>Ipswich Town vs. Aston Villa</td><td class="win">Under 4.5 - Total</td><td>1.20</td></tr>
+<tr><td>42</td><td>Le Havre AC vs. Strasbourg Alsace</td><td class="win">Under 4.5 - Total</td><td>1.20</td></tr>
+<tr><td>43</td><td>OGC Nice vs. Troyes AC</td><td class="win">Under 4.5 - Total</td><td>1.17</td></tr>
+<tr><td>44</td><td>Udinese Calcio vs. ACF Fiorentina</td><td class="win">Under 4.5 - Total</td><td>1.15</td></tr>
+<tr><td>45</td><td>Sassuolo vs. SSC Napoli</td><td class="win">Under 5.5 - Total</td><td>1.08</td></tr>
+<tr><td>46</td><td>Toulouse FC vs. Stade Rennais FC</td><td class="win">Under 4.5 - Total</td><td>1.21</td></tr>
+<tr><td>47</td><td>AS Roma vs. AC Monza</td><td class="win">Under 5.5 - Total</td><td>1.11</td></tr>
+<tr><td>48</td><td>Como 1907 vs. Juventus Turin</td><td class="win">Under 3.5 - Total</td><td>1.38</td></tr>
+<tr><td>49</td><td>US Lecce vs. Atalanta BC</td><td class="win">Under 4.5 - Total</td><td>1.18</td></tr>
+<tr><td>50</td><td>Cagliari Calcio vs. AC Milan</td><td class="win">Under 4.5 - Total</td><td>1.16</td></tr>
 </table>
-<p style="text-align:center;font-weight:bold;">Total Odds: 420,820.08 | Payout: R1,641,198.33 | Stake: R3.00</p>
+<p style="text-align:center;font-weight:bold;">Total Odds: 2,634.93 | R5 = R13,174.69</p>
+<p style="text-align:center;font-size:12px;">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
 </div>
 </div>
-
-<div class="card" id="banker">
-<h2>🦁 3. BANKER TICKET - NEW!</h2>
-<p>Pay R30 / $2 - Get BANKER code</p>
-<div class="winbanner">✅ BANKER TICKET - 12 TEAMS - SAFE ✅</div>
-<div class="circles"><div class="circ green"><b>12 🔥</b><small>HOT</small></div><div class="circ orange"><b>12</b><small>STILL<br>PLAYING</small></div></div>
-<div style="background:#d4edda;padding:12px;border-radius:10px;text-align:center;margin-top:10px;border:2px solid #008000;">
-<b>🔥 12 TEAMS HOT 🔥</b><br>
-<b>ODDS: 292.57 + BONUS 15% = FINAL ODDS 336.45</b><br>
-<b>MARKET: FULL TIME - 1X2 - FIXED</b>
-</div>
-<input type="password" id="code3" placeholder="Enter BANKER Code" autocomplete="off">
-<button onclick="unlock3()">UNLOCK BANKER</button>
-<div id="teams3" class="teams">
-<div class="hot">🔥 12 TEAMS HOT 🔥</div>
-<p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">12 TEAMS | FINAL ODDS: 336.45</p>
-<table>
-<tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
-<tr><td>1</td><td>Man City vs. Fulham</td><td class="win">Man City | 1</td><td>0.40</td></tr>
-<tr><td>2</td><td>Tromso vs. Viking FK</td><td class="win">Viking FK | 2</td><td>0.85</td></tr>
-<tr><td>3</td><td>SV 07 Elversberg vs. Freiburg</td><td class="win">Freiburg | 2</td><td>1.02</td></tr>
-<tr><td>4</td><td>Monchengladbach vs. Dortmund</td><td class="win">Dortmund | 2</td><td>0.60</td></tr>
-<tr><td>5</td><td>Falkirk vs. St Johnstone</td><td class="win">Falkirk | 1</td><td>0.85</td></tr>
-<tr><td>6</td><td>NEC Nijmegen vs. PSV</td><td class="win">PSV | 2</td><td>0.75</td></tr>
-<tr><td>7</td><td>Young Boys vs. Thun</td><td class="win">Young Boys | 1</td><td>0.40</td></tr>
-<tr><td>8</td><td>KV Mechelen vs. Club Brugge</td><td class="win">Club Brugge | 2</td><td>0.40</td></tr>
-<tr><td>9</td><td>Kortrijk vs. St Gilloise</td><td class="win">St Gilloise | 2</td><td>0.40</td></tr>
-<tr><td>10</td><td>Austria Vienna vs. RB Salzburg</td><td class="win">RB Salzburg | 2</td><td>0.65</td></tr>
-<tr><td>11</td><td>Marseille vs. Le Mans FC</td><td class="win">Marseille | 1</td><td>0.45</td></tr>
-<tr><td>12</td><td>Getafe vs. Atl Madrid</td><td class="win">Atl Madrid | 2</td><td>0.65</td></tr>
-</table>
-<p style="text-align:center;font-weight:bold;">Odds: 292.57 + Bonus 15% = Final Odds: 336.45</p>
-</div>
-</div>
-
-<script>
-function unlock1(){ if(document.getElementById('code1').value.trim().toUpperCase() === 'STD500'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
-function unlock2(){ if(document.getElementById('code2').value.trim().toUpperCase() === 'TRD600'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
-function unlock3(){ if(document.getElementById('code3').value.trim().toUpperCase() === 'BNK700'){ document.getElementById('teams3').style.display='block'; alert('BANKER Unlocked!'); } else { alert('Wrong BANKER Code!'); } }
-</script>
-
-<br><br>
-<a href="index.html" style="display:block;background:#0b3d91;color:white;padding:18px;text-align:center;font-size:22px;font-weight:bold;border-radius:12px;text-decoration:none;">⬅️ BACK TO MAIN WEBSITE</a>
-<br><br>
-<div id="visitBox" style="text-align:center;font-size:12px;color:#888;margin-top:10px;">Visits: <img id="visitImg" src="https://visitor-badge.laobi.icu/badge?page_id=bankstips-teams-standard-trade" alt="visits" style="vertical-align:middle;"></div>
-<script>
-if(window.location.search.includes('me=1')){ document.getElementById('visitBox').innerHTML = 'Owner View - Not Counted'; }
-</script>
-
-</body>
-</html>
