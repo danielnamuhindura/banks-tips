@@ -20,9 +20,8 @@ header p{margin:8px 0 0;font-size:16px}
 .btn-green{background:#25D366;color:white}
 .pay{background:#0b3d91;color:white;border-radius:14px;padding:20px;margin:15px 0}
 .pay h2{color:#d4af37;margin-top:0}
-.locked{background:#fff3cd;border:2px dashed #e6a800;border-radius:14px;padding:20px;margin:15px 0;text-align:center}
-.locked h2{color:#0b3d91;margin:0 0 10px}
-.locked input{width:90%;padding:14px;border-radius:10px;border:1px solid #ccc;text-align:center;font-size:16px}
+.tipbox{background:#eef4ff;border-radius:10px;padding:12px;margin-top:12px}
+.tipbox b{color:#0b3d91}
 footer{text-align:center;color:white;background:#0b3d91;padding:20px;font-size:14px}
 </style>
 </head>
@@ -35,32 +34,26 @@ footer{text-align:center;color:white;background:#0b3d91;padding:20px;font-size:1
 </header>
 <div class="wrap">
 <p style="text-align:center"><b>Choose your ticket. Pay. Get your tips.</b><br>All tickets start at R30 in SA / $2 in World.</p>
-<a href="teams.html" style="display:block;background:#0b3d91;color:white;padding:18px;text-align:center;font-size:22px;font-weight:bold;border-radius:12px;text-decoration:none;">➡️ GO TO TEAMS - ENTER YOUR CODE</a>
 <div class="card">
 <h2>1. STANDARD TICKET</h2>
 <p>For everyone. Take a chance. Daily tips.</p>
 <div class="price">R30 <span>/ $2</span></div>
+<div id="tips-STANDARD"></div>
 <a class="btn" href="https://wa.me/27836846150?text=Hello Banks Tips, I want STANDARD TICKET R30 / $2">GET STANDARD TICKET</a>
 </div>
 <div class="card">
 <h2>2. TRADE TICKET</h2>
 <p>For trading. Long plan. 2 weeks, 3 weeks, monthly.</p>
 <div class="price">R30 <span>/ $2</span></div>
+<div id="tips-TRADE"></div>
 <a class="btn" href="https://wa.me/27836846150?text=Hello Banks Tips, I want TRADE TICKET R30 / $2">GET TRADE TICKET</a>
 </div>
 <div class="card" style="border:3px solid #d4af37">
 <h2>3. BANK TICKET ⭐ MOST TRUSTED</h2>
 <p>The one we trust most. For big amount. Safe and strong.</p>
 <div class="price">R30 <span>/ $2</span></div>
+<div id="tips-BANK"></div>
 <a class="btn btn-gold" href="https://wa.me/27836846150?text=Hello Banks Tips, I want BANK TICKET R30 / $2">GET BANK TICKET ⭐</a>
-</div>
-<div class="locked">
-<h2>🔒 5 SECRET BEST TIPS - LOCKED</h2>
-<p>Enter password to unlock the 5 best tips:</p>
-<input type="password" id="pass" placeholder="Enter Password">
-<br><br>
-<a class="btn" href="#" onclick="if(document.getElementById('pass').value=='BANKS30'){alert('Correct! Send your payment proof on WhatsApp to get your 5 tips.');}else{alert('Wrong password. Please pay and get your password on WhatsApp.');} return false;">Unlock Tips 🔓</a>
-<p style="font-size:13px;color:#555">Pay first on WhatsApp to get your password.</p>
 </div>
 <div class="pay">
 <h2>HOW TO PAY</h2>
@@ -70,16 +63,29 @@ footer{text-align:center;color:white;background:#0b3d91;padding:20px;font-size:1
 </div>
 <div class="card">
 <a class="btn btn-green" href="https://wa.me/27836846150">Chat on WhatsApp 🇿🇦</a>
-<div class="card">
-<a class="btn btn-blue"
- href="https://wa.me/243966225790">Chat on WhatsApp 🇨🇩</a>
+<br>
+<a class="btn btn-green" href="https://wa.me/243966225790">Chat on WhatsApp 🇨🇩</a>
 <br>
 <p>Email: BanksTips@gmail.com<br>Location: Soweto, Gauteng, South Africa</p>
 </div>
-<a href="teams.html" style="display:block;background:#0b3d91;color:white;padding:18px;text-align:center;font-size:22px;font-weight:bold;border-radius:12px;text-decoration:none;">➡️ GO TO TEAMS - ENTER YOUR CODE</a>
-<br><br>
 <p style="text-align:center">Banks Tips • SA | DRC | World<br>Play responsibly. 18+</p>
 </div>
 <footer>© 2026 Banks Tips - All Rights Reserved</footer>
+<script type="module">
+import { db } from "./lib/firebase.js";
+import { ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+onValue(ref(db, "tips"), (snap)=>{
+  const data = snap.val() || {};
+  const groups = {"STANDARD TICKET":[], "TRADE TICKET":[], "BANK TICKET":[]};
+  for(let id in data){ const t=data[id]; if(groups[t.ticket]) groups[t.ticket].push(t); }
+  for(let key in groups){
+    const short = key.split(" ")[0];
+    const el = document.getElementById("tips-"+short);
+    if(!el) continue;
+    if(groups[key].length===0){ el.innerHTML = "<p style='color:#888'>No tips yet today - Check back soon!</p>"; }
+    else { el.innerHTML = groups[key].map(t=>`<div class="tipbox"><b>${t.match}</b><br>${t.tip} @ ${t.odds}</div>`).join(""); }
+  }
+});
+</script>
 </body>
 </html>
