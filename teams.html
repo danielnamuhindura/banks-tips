@@ -105,12 +105,9 @@ td{padding:8px;border-bottom:1px solid #ddd}
 </div>
 </div>
 
-<script>
-const VALID_CODES = {
-  1: ["STD502","STD503","STD504","STD505","STD506","STD507"],
-  2: ["TRD600","TRD601","TRD602","TRD603","TRD604"],
-  3: ["BNK700","BNK701","BNK702","BNK703","BNK704","BNK705"]
-};
+<script type="module">
+import { db } from "./lib/firebase.js";
+import { ref, get, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 let used1 = false, used2 = false, used3 = false;
 function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticketNum){
   let timeLeft = seconds;
@@ -135,42 +132,26 @@ function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticket
     }
   }, 1000);
 }
-function doUnlock(num, codeId, teamsId, countdownId, lockedId, inputId){
+async function doUnlock(num, codeId, teamsId, countdownId, lockedId, inputId){
   if(num==1 && used1){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
   if(num==2 && used2){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
   if(num==3 && used3){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
   let code = document.getElementById(codeId).value.trim().toUpperCase();
   if(!code){ alert('Enter code first!'); return; }
-  if(!VALID_CODES[num].includes(code)){ alert('❌ Wrong Code! Go to BANKY for NEW code!'); return; }
-  if(window.firebaseCheck){
-    window.firebaseCheck(code).then(function(ok){
-      if(ok === false){ alert('🔒 THIS CODE ALREADY USED ON ANOTHER PHONE! One Code = One Person! Go to BANKY for NEW code!'); return; }
-      document.getElementById(teamsId).style.display='block';
-      startCountdown(countdownId, teamsId, lockedId, inputId, 30, num);
-    });
-  } else {
+  try{
+    const vSnap = await get(ref(db, "validCodes/" + code));
+    if(!vSnap.exists()){ alert('❌ Wrong Code! Go to BANKY for NEW code!'); return; }
+    if(vSnap.val().ticket !== num){ alert('❌ This code is NOT for this ticket! Use correct ticket!'); return; }
+    const uSnap = await get(ref(db, "usedCodes/" + code));
+    if(uSnap.exists()){ alert('🔒 THIS CODE ALREADY USED ON ANOTHER PHONE! One Code = One Person! Go to BANKY for NEW code!'); return; }
+    await set(ref(db, "usedCodes/" + code), { usedAt: new Date().toISOString(), ticket: num });
     document.getElementById(teamsId).style.display='block';
     startCountdown(countdownId, teamsId, lockedId, inputId, 30, num);
-  }
+  }catch(e){ alert('Error: '+e.message); }
 }
-function unlock1(){ doUnlock(1,'code1','teams1','countdown1','locked1','code1'); }
-function unlock2(){ doUnlock(2,'code2','teams2','countdown2','locked2','code2'); }
-function unlock3(){ doUnlock(3,'code3','teams3','countdown3','locked3','code3'); }
-</script>
-
-<script type="module">
-try{
-  const { db } = await import("./lib/firebase.js");
-  const { ref, get, set } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");
-  window.firebaseCheck = async function(code){
-    try{
-      const snap = await get(ref(db, "usedCodes/" + code));
-      if(snap.exists()) return false;
-      await set(ref(db, "usedCodes/" + code), { usedAt: new Date().toISOString() });
-      return true;
-    }catch(e){ return true; }
-  };
-}catch(e){ console.log("Firebase failed, using local mode", e); }
+window.unlock1 = function(){ doUnlock(1,'code1','teams1','countdown1','locked1','code1'); };
+window.unlock2 = function(){ doUnlock(2,'code2','teams2','countdown2','locked2','code2'); };
+window.unlock3 = function(){ doUnlock(3,'code3','teams3','countdown3','locked3','code3'); };
 </script>
 
 <br><br>
