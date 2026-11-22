@@ -23,7 +23,8 @@ table{width:100%;border-collapse:collapse;font-size:14px}
 th{background:#0b3d91;color:white;padding:8px}
 td{padding:8px;border-bottom:1px solid #ddd}
 .win{color:#0b3d91;font-weight:bold}
-.note{text-align:center;font-size:12px;color:#666;margin-top:8px}
+.disclaimer{background:#FFF3CD;border:2px solid #FF9800;padding:12px;border-radius:10px;margin-top:12px;text-align:center}
+.disclaimer p{color:#000!important;font-weight:bold;margin:5px 0;font-size:15px}
 </style>
 </head>
 <body>
@@ -47,14 +48,15 @@ td{padding:8px;border-bottom:1px solid #ddd}
 <div class="hot">🔥 STANDARD - SCREENSHOT FAST! 🔥</div>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
-
-<!-- 🟢🟢🟢 MY G - START WRITE STANDARD TEAMS HERE - START HERE 🟢🟢🟢 -->
+<!-- 🟢 START WRITE STANDARD TEAMS HERE 🟢 -->
 <tr><td>1</td><td>Barcelona vs Villarreal</td><td class="win">Barcelona Win | 1</td><td>1.55</td></tr>
-<!-- 🔴🔴🔴 MY G - STOP HERE - DON'T WRITE PAST HERE - LIMIT HERE 🔴🔴🔴 -->
-
+<!-- 🔴 STOP HERE 🔴 -->
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: 1.55</p>
-<p class="note">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
+<div class="disclaimer">
+<p>👁️ No ticket is 100% guaranteed!</p>
+<p>Play responsibly, only what you can afford to lose. 18+</p>
+</div>
 </div>
 </div>
 
@@ -71,14 +73,15 @@ td{padding:8px;border-bottom:1px solid #ddd}
 <div class="hot">🔥 TRADE - SCREENSHOT FAST! 🔥</div>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
-
-<!-- 🟢🟢🟢 MY G - START WRITE TRADE TEAMS HERE - START HERE 🟢🟢🟢 -->
-<!-- PUT TRADE TEAMS HERE - EXAMPLE: <tr><td>1</td><td>Team A vs Team B</td><td class="win">Team A Win</td><td>1.80</td></tr> -->
-<!-- 🔴🔴🔴 MY G - STOP HERE - DON'T WRITE PAST HERE - LIMIT HERE 🔴🔴🔴 -->
-
+<!-- 🟢 START WRITE TRADE TEAMS HERE 🟢 -->
+<!-- PUT TRADE TEAMS HERE -->
+<!-- 🔴 STOP HERE 🔴 -->
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: --</p>
-<p class="note">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
+<div class="disclaimer">
+<p>👁️ No ticket is 100% guaranteed!</p>
+<p>Play responsibly, only what you can afford to lose. 18+</p>
+</div>
 </div>
 </div>
 
@@ -95,14 +98,15 @@ td{padding:8px;border-bottom:1px solid #ddd}
 <div class="hot">🔥 BANKER - SCREENSHOT FAST! 🔥</div>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
-
-<!-- 🟢🟢🟢 MY G - START WRITE BANKER TEAMS HERE - START HERE 🟢🟢🟢 -->
+<!-- 🟢 START WRITE BANKER TEAMS HERE 🟢 -->
 <!-- PUT BANKER TEAMS HERE -->
-<!-- 🔴🔴🔴 MY G - STOP HERE - DON'T WRITE PAST HERE - LIMIT HERE 🔴🔴🔴 -->
-
+<!-- 🔴 STOP HERE 🔴 -->
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: --</p>
-<p class="note">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
+<div class="disclaimer">
+<p>👁️ No ticket is 100% guaranteed!</p>
+<p>Play responsibly, only what you can afford to lose. 18+</p>
+</div>
 </div>
 </div>
 
@@ -111,18 +115,10 @@ td{padding:8px;border-bottom:1px solid #ddd}
 // STD500 -> STD501 -> STD502 ...
 // TRD600 -> TRD601 ...
 // BNK700 -> BNK701 ...
-
-// ===== REFRESH FIX - REMEMBERS USED CODES EVEN AFTER REFRESH =====
-function getUsed(){
-  return JSON.parse(localStorage.getItem("banks_used") || "[]");
-}
-function saveUsed(code){
-  let u = getUsed();
-  if(!u.includes(code)){ u.push(code); localStorage.setItem("banks_used", JSON.stringify(u)); }
-}
+function getUsed(){ return JSON.parse(localStorage.getItem("banks_used") || "[]"); }
+function saveUsed(code){ let u=getUsed(); if(!u.includes(code)){ u.push(code); localStorage.setItem("banks_used", JSON.stringify(u)); } }
 function isUsed(code){ return getUsed().includes(code); }
-
-function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticketNum, codeUsed){
+function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, codeUsed){
   let timeLeft = seconds;
   let box = document.getElementById(countdownId);
   box.style.display = 'block';
@@ -138,35 +134,26 @@ function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticket
       document.getElementById(inputId).placeholder = 'CODE EXPIRED - GO BACK TO BANKER IN MAIN WEBSITE';
       saveUsed(codeUsed);
       alert('🔒 TIME FINISHED! Page LOCKED! Go back to BANKER in MAIN WEBSITE for NEW code!');
-    } else {
-      box.innerHTML = '⏰ TIME LEFT: ' + timeLeft + ' sec - SCREENSHOT FAST!';
-    }
+    } else { box.innerHTML = '⏰ TIME LEFT: ' + timeLeft + ' sec - SCREENSHOT FAST!'; }
   }, 1000);
 }
-
 function unlock1(){
   let c = document.getElementById('code1').value.trim().toUpperCase();
-  if(isUsed(c)){ alert('🔒 THIS CODE ALREADY USED! Even after refresh it will NOT work! Go back to BANKER in MAIN WEBSITE for NEW code!'); document.getElementById('locked1').style.display='block'; return; }
-  if(c === 'STD500'){
-    document.getElementById('teams1').style.display='block';
-    startCountdown('countdown1','teams1','locked1','code1',30,1,c);
-  } else { alert('❌ Wrong Code! Go to BANKY for NEW code!'); }
+  if(isUsed(c)){ alert('🔒 THIS CODE ALREADY USED! Go back to BANKER in MAIN WEBSITE for NEW code!'); document.getElementById('locked1').style.display='block'; return; }
+  if(c === 'STD500'){ document.getElementById('teams1').style.display='block'; startCountdown('countdown1','teams1','locked1','code1',30,c); }
+  else { alert('❌ Wrong Code! Go to BANKY for NEW code!'); }
 }
 function unlock2(){
   let c = document.getElementById('code2').value.trim().toUpperCase();
-  if(isUsed(c)){ alert('🔒 THIS CODE ALREADY USED! Even after refresh it will NOT work! Go back to BANKER in MAIN WEBSITE for NEW code!'); document.getElementById('locked2').style.display='block'; return; }
-  if(c === 'TRD600'){
-    document.getElementById('teams2').style.display='block';
-    startCountdown('countdown2','teams2','locked2','code2',30,2,c);
-  } else { alert('❌ Wrong Code! Go to BANKY for NEW code!'); }
+  if(isUsed(c)){ alert('🔒 THIS CODE ALREADY USED! Go back to BANKER in MAIN WEBSITE for NEW code!'); document.getElementById('locked2').style.display='block'; return; }
+  if(c === 'TRD600'){ document.getElementById('teams2').style.display='block'; startCountdown('countdown2','teams2','locked2','code2',30,c); }
+  else { alert('❌ Wrong Code! Go to BANKY for NEW code!'); }
 }
 function unlock3(){
   let c = document.getElementById('code3').value.trim().toUpperCase();
-  if(isUsed(c)){ alert('🔒 THIS CODE ALREADY USED! Even after refresh it will NOT work! Go back to BANKER in MAIN WEBSITE for NEW code!'); document.getElementById('locked3').style.display='block'; return; }
-  if(c === 'BNK700'){
-    document.getElementById('teams3').style.display='block';
-    startCountdown('countdown3','teams3','locked3','code3',30,3,c);
-  } else { alert('❌ Wrong Code! Go to BANKY for NEW code!'); }
+  if(isUsed(c)){ alert('🔒 THIS CODE ALREADY USED! Go back to BANKER in MAIN WEBSITE for NEW code!'); document.getElementById('locked3').style.display='block'; return; }
+  if(c === 'BNK700'){ document.getElementById('teams3').style.display='block'; startCountdown('countdown3','teams3','locked3','code3',30,c); }
+  else { alert('❌ Wrong Code! Go to BANKY for NEW code!'); }
 }
 </script>
 
