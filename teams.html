@@ -10,6 +10,7 @@ h1{color:#0b3d91}
 .card h2{margin:0;color:#0b3d91;font-size:22px;white-space:nowrap}
 .odds-badge{display:inline-block;background:#FFD700;color:#0b3d91;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px;margin-top:6px}
 .odds-badge-green{display:inline-block;background:#008000;color:white;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px;margin-top:6px}
+.countdown{background:#ff0000;color:white;padding:10px;border-radius:10px;text-align:center;font-size:22px;font-weight:bold;margin-top:10px;display:none}
 input{width:90%;padding:12px;margin-top:10px;font-size:18px;text-align:center}
 button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold}
 .teams{display:none;margin-top:15px;background:#d4edda;padding:15px;border-radius:10px;border:2px solid #008000}
@@ -59,13 +60,13 @@ td{padding:7px;border-bottom:1px solid #ddd}
 </div>
 <input type="password" id="code1" placeholder="Enter STANDARD Code" autocomplete="off">
 <button onclick="unlock1()">UNLOCK STANDARD</button>
+<div id="countdown1" class="countdown">⏰ TIME LEFT: 30</div>
 <div id="teams1" class="teams">
 <div class="hot">🔥 STANDARD 🔥</div>
 <p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">TEAMS COMING SOON</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
 <!-- MY G - PUT YOUR 3 OR 4 TEAMS HERE -->
-<!-- EXAMPLE: <tr><td>1</td><td>Kaizer Chiefs vs Pirates</td><td class="win">Under 2.5 - 1st Half</td><td>1.15</td></tr> -->
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: --</p>
 <p style="text-align:center;font-size:12px;">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
@@ -84,13 +85,13 @@ td{padding:7px;border-bottom:1px solid #ddd}
 </div>
 <input type="password" id="code2" placeholder="Enter TRADE Code" autocomplete="off">
 <button onclick="unlock2()">UNLOCK TRADE</button>
+<div id="countdown2" class="countdown">⏰ TIME LEFT: 30</div>
 <div id="teams2" class="teams">
 <div class="hot">🔥 TRADE 🔥</div>
 <p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">TEAMS COMING SOON</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
 <!-- MY G - PUT YOUR 3 OR 4 TEAMS HERE -->
-<!-- EXAMPLE: <tr><td>1</td><td>Man City vs Fulham</td><td class="win">Man City | 1</td><td>0.40</td></tr> -->
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: --</p>
 <p style="text-align:center;font-size:12px;">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
@@ -109,56 +110,60 @@ td{padding:7px;border-bottom:1px solid #ddd}
 </div>
 <input type="password" id="code3" placeholder="Enter BANKER Code" autocomplete="off">
 <button onclick="unlock3()">UNLOCK BANKER</button>
+<div id="countdown3" class="countdown">⏰ TIME LEFT: 30</div>
 <div id="teams3" class="teams">
 <div class="hot">🔥 BANKER 🔥</div>
 <p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">TEAMS COMING SOON</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
 <!-- MY G - PUT YOUR 3 OR 4 TEAMS HERE -->
-<!-- EXAMPLE: <tr><td>1</td><td>Man City vs Fulham</td><td class="win">Man City | 1</td><td>0.40</td></tr> -->
 </table>
 <p style="text-align:center;font-weight:bold;">Odds: --</p>
 </div>
 </div>
 
 <script>
-// 30 SECONDS EXPIRE SYSTEM - INCLUDED INSIDE FILE
-function isExpired() {
-  let lastUnlock = localStorage.getItem('banks_last_unlock');
-  if (!lastUnlock) return false;
-  let now = Date.now();
-  if (now - parseInt(lastUnlock) > 30000) { return true; }
-  return false;
+// MY G - HOW TO CHANGE CODE FOR NEW CUSTOMER:
+// Find STD500 below and change to STD501, then STD502, etc.
+// Find TRD600 and change to TRD601, etc.
+// Find BNK700 and change to BNK701, etc.
+// Old code will NOT work anymore because you changed it!
+
+function startCountdown(countdownId, teamsId, seconds){
+  let timeLeft = seconds;
+  let box = document.getElementById(countdownId);
+  box.style.display = 'block';
+  box.innerHTML = '⏰ TIME LEFT: ' + timeLeft + ' seconds - HURRY! COPY FAST!';
+  let timer = setInterval(function(){
+    timeLeft = timeLeft - 1;
+    if(timeLeft <= 0){
+      clearInterval(timer);
+      box.innerHTML = '⏰ TIME FINISHED! CODE EXPIRED!';
+      document.getElementById(teamsId).style.display = 'none';
+      alert('TIME FINISHED! Code EXPIRED! Come back to BANKY for new code!');
+    } else {
+      box.innerHTML = '⏰ TIME LEFT: ' + timeLeft + ' seconds - HURRY! COPY FAST!';
+    }
+  }, 1000);
 }
+
 function unlock1(){
-  let code = document.getElementById('code1').value.trim().toUpperCase();
-  if(code === 'STD500'){
-    if(isExpired()){ alert('Code EXPIRED! After 30 seconds code dies! Come back to BANKY for new code!'); document.getElementById('teams1').style.display='none'; return; }
-    localStorage.setItem('banks_last_unlock', Date.now().toString());
+  if(document.getElementById('code1').value.trim().toUpperCase() === 'STD500'){
     document.getElementById('teams1').style.display='block';
-    alert('STANDARD Unlocked! You have 30 SECONDS only! Hurry!');
-    setTimeout(function(){ document.getElementById('teams1').style.display='none'; alert('30 SECONDS FINISHED! Code EXPIRED!'); }, 30000);
-  } else { alert('Wrong STANDARD Code!'); }
+    startCountdown('countdown1','teams1',30);
+  } else { alert('Wrong STANDARD Code! This code is EXPIRED or WRONG! Come to BANKY for new code!'); }
 }
 function unlock2(){
-  let code = document.getElementById('code2').value.trim().toUpperCase();
-  if(code === 'TRD600'){
-    if(isExpired()){ alert('Code EXPIRED! After 30 seconds code dies! Come back to BANKY for new code!'); document.getElementById('teams2').style.display='none'; return; }
-    localStorage.setItem('banks_last_unlock', Date.now().toString());
+  if(document.getElementById('code2').value.trim().toUpperCase() === 'TRD600'){
     document.getElementById('teams2').style.display='block';
-    alert('TRADE Unlocked! You have 30 SECONDS only! Hurry!');
-    setTimeout(function(){ document.getElementById('teams2').style.display='none'; alert('30 SECONDS FINISHED! Code EXPIRED!'); }, 30000);
-  } else { alert('Wrong TRADE Code!'); }
+    startCountdown('countdown2','teams2',30);
+  } else { alert('Wrong TRADE Code! This code is EXPIRED or WRONG! Come to BANKY for new code!'); }
 }
 function unlock3(){
-  let code = document.getElementById('code3').value.trim().toUpperCase();
-  if(code === 'BNK700'){
-    if(isExpired()){ alert('Code EXPIRED! After 30 seconds code dies! Come back to BANKY for new code!'); document.getElementById('teams3').style.display='none'; return; }
-    localStorage.setItem('banks_last_unlock', Date.now().toString());
+  if(document.getElementById('code3').value.trim().toUpperCase() === 'BNK700'){
     document.getElementById('teams3').style.display='block';
-    alert('BANKER Unlocked! You have 30 SECONDS only! Hurry!');
-    setTimeout(function(){ document.getElementById('teams3').style.display='none'; alert('30 SECONDS FINISHED! Code EXPIRED!'); }, 30000);
-  } else { alert('Wrong BANKER Code!'); }
+    startCountdown('countdown3','teams3',30);
+  } else { alert('Wrong BANKER Code! This code is EXPIRED or WRONG! Come to BANKY for new code!'); }
 }
 </script>
 
