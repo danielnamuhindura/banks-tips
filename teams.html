@@ -5,18 +5,19 @@
 <title>BANKS TIPS - VIP TICKETS</title>
 <style>
 body{font-family:Arial;margin:0;background:#0b3d91;text-align:center;padding:10px;color:white}
-.top{background:white;color:#0b3d91;padding:18px;border-radius:18px;max-width:650px;margin:10px auto}
+.top{background:#00A651;color:white;padding:18px;border-radius:18px;max-width:650px;margin:10px auto}
 .top h1{margin:0;font-size:32px}
 .top p{margin:5px 0 0 0}
-.card{background:white;color:#333;margin:15px auto;padding:20px;border-radius:15px;max-width:650px;text-align:left}
-.card h2{margin:0;color:#0b3d91;font-size:22px}
+.card{background:#00A651;color:white;margin:15px auto;padding:20px;border-radius:15px;max-width:650px;text-align:left}
+.card h2{margin:0;color:white;font-size:22px}
+.card p{color:white}
 .badge{display:inline-block;background:#FFD700;color:#0b3d91;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px;margin-top:6px}
-.badge-green{display:inline-block;background:#008000;color:white;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px;margin-top:6px}
+.badge-green{display:inline-block;background:white;color:#00A651;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px;margin-top:6px}
 .countdown{background:#ff0000;color:white;padding:12px;border-radius:10px;text-align:center;font-size:20px;font-weight:bold;margin-top:10px;display:none}
 .locked{background:#333;color:white;padding:12px;border-radius:10px;text-align:center;font-size:16px;font-weight:bold;margin-top:10px;display:none}
 input{width:90%;padding:12px;margin-top:10px;font-size:18px;text-align:center;border:2px solid #0b3d91;border-radius:10px}
-button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold}
-.teams{display:none;margin-top:15px;background:#d4edda;padding:15px;border-radius:10px;border:2px solid #008000}
+button{width:95%;padding:13px;margin-top:10px;background:white;color:#00A651;border:none;border-radius:10px;font-size:18px;font-weight:bold}
+.teams{display:none;margin-top:15px;background:white;color:#333;padding:15px;border-radius:10px;border:2px solid #008000}
 .hot{background:#008000;color:white;padding:10px;border-radius:10px;text-align:center;font-size:20px;font-weight:bold;margin-bottom:10px}
 table{width:100%;border-collapse:collapse;font-size:14px}
 th{background:#0b3d91;color:white;padding:8px}
@@ -41,12 +42,16 @@ td{padding:8px;border-bottom:1px solid #ddd}
 <input type="password" id="code1" placeholder="Enter STANDARD Code" autocomplete="off">
 <button onclick="unlock1()">UNLOCK STANDARD</button>
 <div id="countdown1" class="countdown"></div>
-<div id="locked1" class="locked">🔒 LOCKED! This code is EXPIRED. Go to BANKY for NEW code!</div>
+<div id="locked1" class="locked">🔒 LOCKED! This code is EXPIRED. Go back to BANKER in MAIN WEBSITE for NEW code!</div>
 <div id="teams1" class="teams">
 <div class="hot">🔥 STANDARD - SCREENSHOT FAST! 🔥</div>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
+
+<!-- 🟢🟢🟢 MY G - START WRITE STANDARD TEAMS HERE - START HERE 🟢🟢🟢 -->
 <tr><td>1</td><td>Barcelona vs Villarreal</td><td class="win">Barcelona Win | 1</td><td>1.55</td></tr>
+<!-- 🔴🔴🔴 MY G - STOP HERE - DON'T WRITE PAST HERE - LIMIT HERE 🔴🔴🔴 -->
+
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: 1.55</p>
 <p class="note">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
@@ -61,12 +66,16 @@ td{padding:8px;border-bottom:1px solid #ddd}
 <input type="password" id="code2" placeholder="Enter TRADE Code" autocomplete="off">
 <button onclick="unlock2()">UNLOCK TRADE</button>
 <div id="countdown2" class="countdown"></div>
-<div id="locked2" class="locked">🔒 LOCKED! This code is EXPIRED. Go to BANKY for NEW code!</div>
+<div id="locked2" class="locked">🔒 LOCKED! This code is EXPIRED. Go back to BANKER in MAIN WEBSITE for NEW code!</div>
 <div id="teams2" class="teams">
 <div class="hot">🔥 TRADE - SCREENSHOT FAST! 🔥</div>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
-<!-- PUT TRADE TEAMS HERE -->
+
+<!-- 🟢🟢🟢 MY G - START WRITE TRADE TEAMS HERE - START HERE 🟢🟢🟢 -->
+<!-- PUT TRADE TEAMS HERE - EXAMPLE: <tr><td>1</td><td>Team A vs Team B</td><td class="win">Team A Win</td><td>1.80</td></tr> -->
+<!-- 🔴🔴🔴 MY G - STOP HERE - DON'T WRITE PAST HERE - LIMIT HERE 🔴🔴🔴 -->
+
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: --</p>
 <p class="note">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
@@ -81,12 +90,16 @@ td{padding:8px;border-bottom:1px solid #ddd}
 <input type="password" id="code3" placeholder="Enter BANKER Code" autocomplete="off">
 <button onclick="unlock3()">UNLOCK BANKER</button>
 <div id="countdown3" class="countdown"></div>
-<div id="locked3" class="locked">🔒 LOCKED! This code is EXPIRED. Go to BANKY for NEW code!</div>
+<div id="locked3" class="locked">🔒 LOCKED! This code is EXPIRED. Go back to BANKER in MAIN WEBSITE for NEW code!</div>
 <div id="teams3" class="teams">
 <div class="hot">🔥 BANKER - SCREENSHOT FAST! 🔥</div>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
+
+<!-- 🟢🟢🟢 MY G - START WRITE BANKER TEAMS HERE - START HERE 🟢🟢🟢 -->
 <!-- PUT BANKER TEAMS HERE -->
+<!-- 🔴🔴🔴 MY G - STOP HERE - DON'T WRITE PAST HERE - LIMIT HERE 🔴🔴🔴 -->
+
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: --</p>
 <p class="note">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
@@ -99,11 +112,17 @@ td{padding:8px;border-bottom:1px solid #ddd}
 // TRD600 -> TRD601 ...
 // BNK700 -> BNK701 ...
 
-let used1 = false;
-let used2 = false;
-let used3 = false;
+// ===== REFRESH FIX - REMEMBERS USED CODES EVEN AFTER REFRESH =====
+function getUsed(){
+  return JSON.parse(localStorage.getItem("banks_used") || "[]");
+}
+function saveUsed(code){
+  let u = getUsed();
+  if(!u.includes(code)){ u.push(code); localStorage.setItem("banks_used", JSON.stringify(u)); }
+}
+function isUsed(code){ return getUsed().includes(code); }
 
-function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticketNum){
+function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticketNum, codeUsed){
   let timeLeft = seconds;
   let box = document.getElementById(countdownId);
   box.style.display = 'block';
@@ -116,11 +135,9 @@ function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticket
       document.getElementById(teamsId).style.display = 'none';
       document.getElementById(lockedId).style.display = 'block';
       document.getElementById(inputId).value = '';
-      document.getElementById(inputId).placeholder = 'CODE EXPIRED - GET NEW CODE';
-      if(ticketNum==1) used1 = true;
-      if(ticketNum==2) used2 = true;
-      if(ticketNum==3) used3 = true;
-      alert('🔒 TIME FINISHED! Page LOCKED! Go to BANKY for NEW code!');
+      document.getElementById(inputId).placeholder = 'CODE EXPIRED - GO BACK TO BANKER IN MAIN WEBSITE';
+      saveUsed(codeUsed);
+      alert('🔒 TIME FINISHED! Page LOCKED! Go back to BANKER in MAIN WEBSITE for NEW code!');
     } else {
       box.innerHTML = '⏰ TIME LEFT: ' + timeLeft + ' sec - SCREENSHOT FAST!';
     }
@@ -128,24 +145,27 @@ function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticket
 }
 
 function unlock1(){
-  if(used1){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
-  if(document.getElementById('code1').value.trim().toUpperCase() === 'STD500'){
+  let c = document.getElementById('code1').value.trim().toUpperCase();
+  if(isUsed(c)){ alert('🔒 THIS CODE ALREADY USED! Even after refresh it will NOT work! Go back to BANKER in MAIN WEBSITE for NEW code!'); document.getElementById('locked1').style.display='block'; return; }
+  if(c === 'STD500'){
     document.getElementById('teams1').style.display='block';
-    startCountdown('countdown1','teams1','locked1','code1',30,1);
+    startCountdown('countdown1','teams1','locked1','code1',30,1,c);
   } else { alert('❌ Wrong Code! Go to BANKY for NEW code!'); }
 }
 function unlock2(){
-  if(used2){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
-  if(document.getElementById('code2').value.trim().toUpperCase() === 'TRD600'){
+  let c = document.getElementById('code2').value.trim().toUpperCase();
+  if(isUsed(c)){ alert('🔒 THIS CODE ALREADY USED! Even after refresh it will NOT work! Go back to BANKER in MAIN WEBSITE for NEW code!'); document.getElementById('locked2').style.display='block'; return; }
+  if(c === 'TRD600'){
     document.getElementById('teams2').style.display='block';
-    startCountdown('countdown2','teams2','locked2','code2',30,2);
+    startCountdown('countdown2','teams2','locked2','code2',30,2,c);
   } else { alert('❌ Wrong Code! Go to BANKY for NEW code!'); }
 }
 function unlock3(){
-  if(used3){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
-  if(document.getElementById('code3').value.trim().toUpperCase() === 'BNK700'){
+  let c = document.getElementById('code3').value.trim().toUpperCase();
+  if(isUsed(c)){ alert('🔒 THIS CODE ALREADY USED! Even after refresh it will NOT work! Go back to BANKER in MAIN WEBSITE for NEW code!'); document.getElementById('locked3').style.display='block'; return; }
+  if(c === 'BNK700'){
     document.getElementById('teams3').style.display='block';
-    startCountdown('countdown3','teams3','locked3','code3',30,3);
+    startCountdown('countdown3','teams3','locked3','code3',30,3,c);
   } else { alert('❌ Wrong Code! Go to BANKY for NEW code!'); }
 }
 </script>
