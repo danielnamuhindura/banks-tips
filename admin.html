@@ -4,74 +4,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ADMIN - BANKY ONLY</title>
 <style>
-*{box-sizing:border-box}
-body{font-family:Arial;background:#0b1e3a;color:white;padding:12px;text-align:center;margin:0}
-.topbar{background:linear-gradient(135deg,#0b3d91,#d4af37);padding:18px;border-radius:18px;max-width:700px;margin:10px auto}
-.topbar h1{margin:0;font-size:26px}
-.topbar p{margin:5px 0 0 0;font-size:13px;opacity:.9}
-.box{background:white;color:#333;max-width:700px;margin:12px auto;padding:18px;border-radius:16px;text-align:left;box-shadow:0 4px 20px rgba(0,0,0,.3)}
-h2{color:#0b3d91;margin:15px 0 8px 0;font-size:19px}
-.stats{display:flex;gap:8px;margin:10px 0}
-.stat{flex:1;background:#f0f4ff;border-radius:12px;padding:12px;text-align:center}
-.stat b{font-size:24px;color:#0b3d91;display:block}
-.stat span{font-size:12px;color:#666}
-.stat.green b{color:#008000}.stat.red b{color:#cc0000}
-input,select{width:100%;padding:13px;margin:6px 0;font-size:16px;border:2px solid #0b3d91;border-radius:10px}
-button{width:100%;padding:13px;margin:6px 0;background:#0b3d91;color:white;border:none;border-radius:10px;font-size:17px;font-weight:bold;cursor:pointer}
-button:active{opacity:.8}
-.green{background:#008000}.red{background:#cc0000}.orange{background:#ff8800}.gold{background:#d4af37;color:#0b3d91}
-.code-row{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#f8f9fa;padding:12px;border-radius:12px;margin:6px 0;border-left:5px solid #008000}
-.code-row.usedRow{border-left-color:#cc0000}
-.code-info{flex:1;min-width:0}
-.code-info b{font-size:17px;letter-spacing:1px}
-.badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:bold;color:white;margin-left:5px}
-.badge-std{background:#0b3d91}.badge-bank{background:#008000}.badge-trade{background:#ff8800}
-.used{color:#cc0000;font-weight:bold;font-size:13px}.free{color:#008000;font-weight:bold;font-size:13px}
-.small{font-size:12px;color:#666;text-align:center}
-.mini{width:auto!important;padding:7px 10px!important;font-size:13px!important;margin:0!important}
-.rowBtns{display:flex;gap:5px;flex-shrink:0}
-.searchBox{border-color:#d4af37!important}
+body{font-family:Arial;background:#111;color:white;padding:12px;text-align:center;margin:0}
+.box{background:white;color:black;max-width:650px;margin:12px auto;padding:18px;border-radius:14px;text-align:left}
+h1{color:#FFD700;font-size:24px}
+h2{color:black;margin:18px 0 8px 0;font-size:20px;border-bottom:3px solid black;padding-bottom:5px}
+input,select{width:100%;padding:14px;margin:6px 0;font-size:18px;border:3px solid black;border-radius:10px;background:white;color:black}
+button{width:100%;padding:14px;margin:6px 0;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;color:white}
+.totalBox{background:#111;color:white;text-align:center;padding:14px;border-radius:10px;font-size:20px;font-weight:bold;margin:10px 0}
+.totalBox span{color:#FFD700;font-size:26px}
+.addBtn{background:#000}
+.logoutBtn{background:#CC0000}
+.refreshBtn{background:#000}
+.clearBtn{background:#CC0000}
+.code-row{background:#F2F2F2;padding:14px;border-radius:10px;margin:8px 0;border:2px solid black}
+.code-row b{font-size:20px;color:black}
+.statusFree{color:black;font-weight:bold;font-size:16px;background:#fff;border:2px solid black;padding:2px 8px;border-radius:6px}
+.statusUsed{color:white;font-weight:bold;font-size:16px;background:#CC0000;padding:3px 9px;border-radius:6px}
+.ticketName{font-size:16px;font-weight:bold;color:black}
+.btnRow{display:flex;gap:6px;margin-top:10px}
+.btnRow button{padding:10px 5px;font-size:15px;margin:0}
+.showBtn{background:#0B3D91}
+.copyBtn{background:#333}
+.resetBtn{background:#E67E00}
+.deleteBtn{background:#CC0000}
+.small{font-size:14px;color:black;text-align:center;font-weight:bold}
 </style>
 </head>
 <body>
-<div class="topbar">
 <h1>🦁 BANKY ADMIN - PRIVATE!</h1>
-<p>Only YOU! Do NOT share this link! 🔒</p>
-</div>
+<p>Only YOU!</p>
 
 <div id="loginBox" class="box">
-<h2>🔒 Enter Admin Password</h2>
-<input type="password" id="adminPass" placeholder="Admin Password">
-<button onclick="login()">OPEN ADMIN</button>
-<p class="small">Default password: BANKY123</p>
+<h2>🔒 ENTER PASSWORD</h2>
+<input type="password" id="adminPass" placeholder="PASSWORD">
+<button class="addBtn" onclick="login()">OPEN ADMIN</button>
 </div>
 
 <div id="adminBox" class="box" style="display:none">
-<h2>📊 DASHBOARD</h2>
-<div class="stats">
-<div class="stat"><b id="totalCount">0</b><span>TOTAL CODES</span></div>
-<div class="stat green"><b id="freeCount">0</b><span>FREE ✅</span></div>
-<div class="stat red"><b id="usedCount">0</b><span>USED ❌</span></div>
-</div>
+<button class="logoutBtn" onclick="logout()">🔒 LOGOUT</button>
+
+<div class="totalBox">TOTAL CODES: <span id="totalCount">0</span></div>
 
 <h2>➕ ADD NEW CODE</h2>
-<input id="newCode" placeholder="Type new code e.g. STD508" style="text-transform:uppercase">
+<input id="newCode" placeholder="TYPE NEW CODE" style="text-transform:uppercase">
 <select id="newTicket">
-<option value="1">1 - STANDARD (10-20 Odds)</option>
-<option value="3">3 - BANKER (5-10 Odds)</option>
-<option value="2">2 - TRADE (50-100 Odds)</option>
+<option value="1">STANDARD</option>
+<option value="3">BANKER</option>
+<option value="2">TRADE</option>
 </select>
-<button class="green" onclick="addCode()">✅ ADD CODE</button>
-<p class="small">⚠️ Remember your code! It will be HIDDEN in list below for safety!</p>
+<button class="addBtn" onclick="addCode()">ADD CODE</button>
 
-<h2>📋 ALL CODES - HIDDEN FOR SAFETY 🔒</h2>
-<input id="searchInput" class="searchBox" placeholder="🔍 Search... (Type STANDARD / BANKER / FREE / USED)" oninput="loadCodes()">
-<button class="orange" onclick="loadCodes()">🔄 REFRESH LIST</button>
+<h2>📋 ALL CODES</h2>
+<button class="refreshBtn" onclick="loadCodes()">REFRESH LIST</button>
 <div id="list">Loading...</div>
 
 <h2>🧹 CLEAN UP</h2>
-<button class="red" onclick="clearUsed()">🗑️ Clear ALL Used Codes - Make them FREE again</button>
-<p class="small">Use this when you want to reuse old codes. Be careful!</p>
+<button class="clearBtn" onclick="clearUsed()">CLEAR ALL USED - MAKE THEM FREE AGAIN</button>
 </div>
 
 <script type="module">
@@ -81,63 +69,54 @@ window.loadCodes = loadCodes;
 window.addCode = addCode;
 window.clearUsed = clearUsed;
 window.login = login;
+window.logout = logout;
 window.deleteCode = deleteCode;
 window.resetUsed = resetUsed;
 window.toggleCode = toggleCode;
 window.copyCode = copyCode;
-let allData = { valid:{}, used:{} };
+let idleTimer;
+function resetIdle(){ clearTimeout(idleTimer); idleTimer=setTimeout(()=>{ if(document.getElementById('adminBox').style.display==='block'){ logout(); alert('LOCKED! Enter password again!'); } },120000); }
+document.addEventListener('click',resetIdle);
+document.addEventListener('keydown',resetIdle);
 function login(){
   if(document.getElementById('adminPass').value==='BANKY123'){
     document.getElementById('loginBox').style.display='none';
     document.getElementById('adminBox').style.display='block';
-    loadCodes();
-  } else { alert('Wrong Admin Password!'); }
+    document.getElementById('adminPass').value='';
+    resetIdle(); loadCodes();
+  } else { alert('Wrong Password!'); }
 }
-function maskCode(code){
-  if(code.length<=3) return '•••';
-  return code.substring(0,3) + '••••';
+function logout(){
+  document.getElementById('adminBox').style.display='none';
+  document.getElementById('loginBox').style.display='block';
+  document.getElementById('list').innerHTML='';
+  clearTimeout(idleTimer);
 }
-function toggleCode(code, btn){
-  let el = document.getElementById('code-'+code);
-  if(el.textContent.includes('•')){
-    el.textContent = code;
-    btn.textContent = '🙈 Hide';
-  } else {
-    el.textContent = maskCode(code);
-    btn.textContent = '👁️ Show';
-  }
+function maskCode(code){ if(code.length<=3) return '•••'; return code.substring(0,3)+'••••'; }
+function toggleCode(code,btn){
+  let el=document.getElementById('code-'+code);
+  if(el.textContent.includes('•')){ el.textContent=code; btn.textContent='HIDE'; }
+  else{ el.textContent=maskCode(code); btn.textContent='SHOW'; }
 }
-async function copyCode(code){
-  try{ await navigator.clipboard.writeText(code); alert('✅ Copied: '+code+' - Send to customer!'); }
-  catch(e){ alert('Code is: '+code); }
-}
+async function copyCode(code){ try{ await navigator.clipboard.writeText(code); alert('Copied!'); }catch(e){ alert('Code: '+code); } }
 async function loadCodes(){
-  let search = (document.getElementById('searchInput')?.value||'').toLowerCase();
   document.getElementById('list').innerHTML='Loading...';
   try{
-    const vSnap = await get(ref(db,"validCodes"));
-    const uSnap = await get(ref(db,"usedCodes"));
-    const valid = vSnap.exists()? vSnap.val() : {};
-    const used = uSnap.exists()? uSnap.val() : {};
-    allData = { valid, used };
-    let codes = Object.keys(valid);
-    document.getElementById('totalCount').textContent = codes.length;
-    let freeN = codes.filter(c=>!used[c]).length;
-    document.getElementById('freeCount').textContent = freeN;
-    document.getElementById('usedCount').textContent = codes.length - freeN;
-    if(codes.length===0){ document.getElementById('list').innerHTML='<p>No codes yet! Add one above!</p>'; return; }
+    const vSnap=await get(ref(db,"validCodes"));
+    const uSnap=await get(ref(db,"usedCodes"));
+    const valid=vSnap.exists()?vSnap.val():{};
+    const used=uSnap.exists()?uSnap.val():{};
+    let codes=Object.keys(valid);
+    document.getElementById('totalCount').textContent=codes.length;
+    if(codes.length===0){ document.getElementById('list').innerHTML='<p>No codes yet!</p>'; return; }
     codes.sort();
     let html='';
     for(let code of codes){
-      let ticket = valid[code].ticket;
-      let name = ticket==1?'STANDARD': ticket==3?'BANKER':'TRADE';
-      let badgeCls = ticket==1?'badge-std': ticket==3?'badge-bank':'badge-trade';
-      let isUsed = used[code] ? true : false;
-      let hay = (code+' '+name+' '+(isUsed?'used':'free')).toLowerCase();
-      if(search && !hay.includes(search)) continue;
-      html += '<div class="code-row '+(isUsed?'usedRow':'')+'"><div class="code-info"><b id="code-'+code+'">'+maskCode(code)+'</b><span class="badge '+badgeCls+'">'+name+'</span><br><span class="'+(isUsed?'used':'free')+'">'+(isUsed?'USED ❌':'FREE ✅')+'</span></div><div class="rowBtns"><button class="mini gold" onclick="toggleCode(\''+code+'\',this)">👁️ Show</button><button class="mini" onclick="copyCode(\''+code+'\')">📋 Copy</button><button class="mini orange" onclick="resetUsed(\''+code+'\')">Reset</button><button class="mini red" onclick="deleteCode(\''+code+'\')">Delete</button></div></div>';
+      let ticket=valid[code].ticket;
+      let name=ticket==1?'STANDARD':ticket==3?'BANKER':'TRADE';
+      let isUsed=used[code]?true:false;
+      html+='<div class="code-row"><b id="code-'+code+'">'+maskCode(code)+'</b> - <span class="ticketName">'+name+'</span><br><br><span class="'+(isUsed?'statusUsed':'statusFree')+'">'+(isUsed?'USED':'FREE')+'</span><div class="btnRow"><button class="showBtn" onclick="toggleCode(\''+code+'\',this)">SHOW</button><button class="copyBtn" onclick="copyCode(\''+code+'\')">COPY</button><button class="resetBtn" onclick="resetUsed(\''+code+'\')">RESET</button><button class="deleteBtn" onclick="deleteCode(\''+code+'\')">DELETE</button></div></div>';
     }
-    if(!html) html='<p>No match for search!</p>';
     document.getElementById('list').innerHTML=html;
   }catch(e){ document.getElementById('list').innerHTML='Error: '+e.message; }
 }
@@ -145,8 +124,8 @@ async function addCode(){
   let code=document.getElementById('newCode').value.trim().toUpperCase();
   let ticket=parseInt(document.getElementById('newTicket').value);
   if(!code){ alert('Type code first!'); return; }
-  await set(ref(db,"validCodes/"+code),{ticket:ticket, createdAt:new Date().toISOString()});
-  alert('✅ '+code+' ADDED! Customer can use it now!\n\nRemember it - it will be HIDDEN in list!');
+  await set(ref(db,"validCodes/"+code),{ticket:ticket,createdAt:new Date().toISOString()});
+  alert('ADDED! Customer can use it now!');
   document.getElementById('newCode').value='';
   loadCodes();
 }
@@ -158,13 +137,13 @@ async function deleteCode(code){
 }
 async function resetUsed(code){
   await remove(ref(db,"usedCodes/"+code));
-  alert('✅ Code is FREE again! Customer can use it!');
+  alert('Code is FREE again!');
   loadCodes();
 }
 async function clearUsed(){
-  if(!confirm('Clear ALL used codes? All codes become FREE again!')) return;
+  if(!confirm('Clear ALL used? All become FREE again!')) return;
   await remove(ref(db,"usedCodes"));
-  alert('✅ All used cleared!');
+  alert('All used cleared!');
   loadCodes();
 }
 </script>
