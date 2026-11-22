@@ -64,7 +64,7 @@ td{padding:7px;border-bottom:1px solid #ddd}
 <p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">TEAMS COMING SOON</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
-<!-- MY G - PUT YOUR 3 OR 4 TEAMS HERE - COPY THIS ONE LINE AND PASTE -->
+<!-- MY G - PUT YOUR 3 OR 4 TEAMS HERE -->
 <!-- EXAMPLE: <tr><td>1</td><td>Kaizer Chiefs vs Pirates</td><td class="win">Under 2.5 - 1st Half</td><td>1.15</td></tr> -->
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: --</p>
@@ -122,9 +122,44 @@ td{padding:7px;border-bottom:1px solid #ddd}
 </div>
 
 <script>
-function unlock1(){ if(document.getElementById('code1').value.trim().toUpperCase() === 'STD500'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
-function unlock2(){ if(document.getElementById('code2').value.trim().toUpperCase() === 'TRD600'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
-function unlock3(){ if(document.getElementById('code3').value.trim().toUpperCase() === 'BNK700'){ document.getElementById('teams3').style.display='block'; alert('BANKER Unlocked!'); } else { alert('Wrong BANKER Code!'); } }
+// 30 SECONDS EXPIRE SYSTEM - INCLUDED INSIDE FILE
+function isExpired() {
+  let lastUnlock = localStorage.getItem('banks_last_unlock');
+  if (!lastUnlock) return false;
+  let now = Date.now();
+  if (now - parseInt(lastUnlock) > 30000) { return true; }
+  return false;
+}
+function unlock1(){
+  let code = document.getElementById('code1').value.trim().toUpperCase();
+  if(code === 'STD500'){
+    if(isExpired()){ alert('Code EXPIRED! After 30 seconds code dies! Come back to BANKY for new code!'); document.getElementById('teams1').style.display='none'; return; }
+    localStorage.setItem('banks_last_unlock', Date.now().toString());
+    document.getElementById('teams1').style.display='block';
+    alert('STANDARD Unlocked! You have 30 SECONDS only! Hurry!');
+    setTimeout(function(){ document.getElementById('teams1').style.display='none'; alert('30 SECONDS FINISHED! Code EXPIRED!'); }, 30000);
+  } else { alert('Wrong STANDARD Code!'); }
+}
+function unlock2(){
+  let code = document.getElementById('code2').value.trim().toUpperCase();
+  if(code === 'TRD600'){
+    if(isExpired()){ alert('Code EXPIRED! After 30 seconds code dies! Come back to BANKY for new code!'); document.getElementById('teams2').style.display='none'; return; }
+    localStorage.setItem('banks_last_unlock', Date.now().toString());
+    document.getElementById('teams2').style.display='block';
+    alert('TRADE Unlocked! You have 30 SECONDS only! Hurry!');
+    setTimeout(function(){ document.getElementById('teams2').style.display='none'; alert('30 SECONDS FINISHED! Code EXPIRED!'); }, 30000);
+  } else { alert('Wrong TRADE Code!'); }
+}
+function unlock3(){
+  let code = document.getElementById('code3').value.trim().toUpperCase();
+  if(code === 'BNK700'){
+    if(isExpired()){ alert('Code EXPIRED! After 30 seconds code dies! Come back to BANKY for new code!'); document.getElementById('teams3').style.display='none'; return; }
+    localStorage.setItem('banks_last_unlock', Date.now().toString());
+    document.getElementById('teams3').style.display='block';
+    alert('BANKER Unlocked! You have 30 SECONDS only! Hurry!');
+    setTimeout(function(){ document.getElementById('teams3').style.display='none'; alert('30 SECONDS FINISHED! Code EXPIRED!'); }, 30000);
+  } else { alert('Wrong BANKER Code!'); }
+}
 </script>
 
 <br><br>
