@@ -93,23 +93,15 @@ td{padding:8px;border-bottom:1px solid #ddd}
 </div>
 </div>
 
-<script type="module">
-import { db } from "./lib/firebase.js";
-import { ref, get, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
-// MY G - CHANGE CODE HERE FOR NEW CUSTOMER:
-// STD500 -> STD501 -> STD502 ...
-// TRD600 -> TRD601 ...
-// BNK700 -> BNK701 ...
+<script>
+// THIS SCRIPT ALWAYS WORKS - EVEN IF FIREBASE FAILS!
 const VALID_CODES = {
   1: ["STD500","STD501","STD502","STD503","STD504","STD505"],
   2: ["TRD600","TRD601","TRD602","TRD603","TRD604"],
   3: ["BNK700","BNK701","BNK702","BNK703","BNK704"]
 };
-
-let used1 = false;
-let used2 = false;
-let used3 = false;
+let used1 = false, used2 = false, used3 = false;
+let firebaseDB = null;
 
 function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticketNum){
   let timeLeft = seconds;
@@ -135,50 +127,48 @@ function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticket
   }, 1000);
 }
 
-// 🔥 FIREBASE CHECK - BLOCKS ON ALL PHONES!
-async function checkAndMarkUsed(code){
-  try{
-    const snap = await get(ref(db, "usedCodes/" + code));
-    if(snap.exists()){
-      return false; // ALREADY USED ANYWHERE!
-    }
-    await set(ref(db, "usedCodes/" + code), { usedAt: new Date().toISOString() });
-    return true;
-  }catch(e){
-    alert('❌ No internet! Check connection and try again!');
-    return null;
+function doUnlock(num, codeId, teamsId, countdownId, lockedId, inputId){
+  if(num==1 && used1){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
+  if(num==2 && used2){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
+  if(num==3 && used3){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
+  let code = document.getElementById(codeId).value.trim().toUpperCase();
+  if(!code){ alert('Enter code first!'); return; }
+  if(!VALID_CODES[num].includes(code)){ alert('❌ Wrong Code! Go to BANKY for NEW code!'); return; }
+  // If Firebase loaded, try to check global - if Firebase fails, STILL UNLOCK so customer is not stuck!
+  if(window.firebaseCheck){
+    window.firebaseCheck(code).then(function(ok){
+      if(ok === false){ alert('🔒 THIS CODE ALREADY USED ON ANOTHER PHONE! One Code = One Person! Go to BANKY for NEW code!'); return; }
+      document.getElementById(teamsId).style.display='block';
+      startCountdown(countdownId, teamsId, lockedId, inputId, 30, num);
+    });
+  } else {
+    document.getElementById(teamsId).style.display='block';
+    startCountdown(countdownId, teamsId, lockedId, inputId, 30, num);
   }
 }
+function unlock1(){ doUnlock(1,'code1','teams1','countdown1','locked1','code1'); }
+function unlock2(){ doUnlock(2,'code2','teams2','countdown2','locked2','code2'); }
+function unlock3(){ doUnlock(3,'code3','teams3','countdown3','locked3','code3'); }
+</script>
 
-window.unlock1 = async function(){
-  if(used1){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
-  let code = document.getElementById('code1').value.trim().toUpperCase();
-  if(!VALID_CODES[1].includes(code)){ alert('❌ Wrong Code! Go to BANKY for NEW code!'); return; }
-  let ok = await checkAndMarkUsed(code);
-  if(ok === null) return;
-  if(!ok){ alert('🔒 THIS CODE ALREADY USED ON ANOTHER PHONE! One Code = One Person! Go to BANKY for NEW code!'); return; }
-  document.getElementById('teams1').style.display='block';
-  startCountdown('countdown1','teams1','locked1','code1',30,1);
-}
-window.unlock2 = async function(){
-  if(used2){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
-  let code = document.getElementById('code2').value.trim().toUpperCase();
-  if(!VALID_CODES[2].includes(code)){ alert('❌ Wrong Code! Go to BANKY for NEW code!'); return; }
-  let ok = await checkAndMarkUsed(code);
-  if(ok === null) return;
-  if(!ok){ alert('🔒 THIS CODE ALREADY USED ON ANOTHER PHONE! One Code = One Person! Go to BANKY for NEW code!'); return; }
-  document.getElementById('teams2').style.display='block';
-  startCountdown('countdown2','teams2','locked2','code2',30,2);
-}
-window.unlock3 = async function(){
-  if(used3){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
-  let code = document.getElementById('code3').value.trim().toUpperCase();
-  if(!VALID_CODES[3].includes(code)){ alert('❌ Wrong Code! Go to BANKY for NEW code!'); return; }
-  let ok = await checkAndMarkUsed(code);
-  if(ok === null) return;
-  if(!ok){ alert('🔒 THIS CODE ALREADY USED ON ANOTHER PHONE! One Code = One Person! Go to BANKY for NEW code!'); return; }
-  document.getElementById('teams3').style.display='block';
-  startCountdown('countdown3','teams3','locked3','code3',30,3);
+<script type="module">
+// Try to load Firebase - if it fails, buttons STILL work above!
+try{
+  const { db } = await import("./lib/firebase.js");
+  const { ref, get, set } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");
+  window.firebaseCheck = async function(code){
+    try{
+      const snap = await get(ref(db, "usedCodes/" + code));
+      if(snap.exists()) return false;
+      await set(ref(db, "usedCodes/" + code), { usedAt: new Date().toISOString() });
+      return true;
+    }catch(e){
+      return true; // If Firebase error, allow unlock so customer not stuck
+    }
+  };
+  console.log("Firebase OK");
+}catch(e){
+  console.log("Firebase failed, using local mode", e);
 }
 </script>
 
