@@ -7,7 +7,9 @@
 body{font-family:Arial;margin:0;background:#f2f2f2;text-align:center;padding:10px}
 h1{color:#0b3d91}
 .card{background:white;margin:15px auto;padding:20px;border-radius:15px;max-width:650px;text-align:left}
-.card h2{margin:0;color:#0b3d91}
+.card h2{margin:0;color:#0b3d91;font-size:22px;white-space:nowrap}
+.odds-badge{display:inline-block;background:#FFD700;color:#0b3d91;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px;margin-top:6px}
+.odds-badge-green{display:inline-block;background:#008000;color:white;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px;margin-top:6px}
 input{width:90%;padding:12px;margin-top:10px;font-size:18px;text-align:center}
 button{width:95%;padding:13px;margin-top:10px;background:#0b3d91;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold}
 .teams{display:none;margin-top:15px;background:#d4edda;padding:15px;border-radius:10px;border:2px solid #008000}
@@ -45,10 +47,12 @@ td{padding:7px;border-bottom:1px solid #ddd}
 <a class="topbtn" href="#trade">2. TRADE</a>
 <a class="topbtn" href="#banker">3. BANKER</a>
 
+<!-- ============ 1. STANDARD ============ -->
 <div class="card" id="standard">
-<h2>🦁 1. STANDARD TICKET 10 TO 20 ODDS</h2>
-<p>Pay R30 / $2 - Get STANDARD 10 to 20 ODDS code</p>
-<div class="winbanner">✅ STANDARD TICKET 10 TO 20 ODDS ✅</div>
+<h2>🦁 1. STANDARD TICKET</h2>
+<span class="odds-badge">10 TO 20 ODDS</span>
+<p>Pay R30 / $2 - Get STANDARD code</p>
+<div class="winbanner">✅ STANDARD TICKET ✅</div>
 <div class="circles"><div class="circ green"><b>-- 🔥</b><small>HOT</small></div><div class="circ orange"><b>--</b><small>STILL<br>PLAYING</small></div></div>
 <div style="background:#d4edda;padding:12px;border-radius:10px;text-align:center;margin-top:10px;border:2px solid #008000;">
 <b>🔥 TEAMS COMING SOON 🔥</b><br>
@@ -60,16 +64,20 @@ td{padding:7px;border-bottom:1px solid #ddd}
 <p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">TEAMS COMING SOON</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
+<!-- MY G - PUT YOUR 3 OR 4 TEAMS HERE - COPY THIS ONE LINE AND PASTE -->
+<!-- EXAMPLE: <tr><td>1</td><td>Kaizer Chiefs vs Pirates</td><td class="win">Under 2.5 - 1st Half</td><td>1.15</td></tr> -->
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: --</p>
 <p style="text-align:center;font-size:12px;">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
 </div>
 </div>
 
+<!-- ============ 2. TRADE ============ -->
 <div class="card" id="trade">
-<h2>🦁 2. TRADE TICKET 50 TO 100 ODDS</h2>
-<p>Pay R30 / $2 - Get TRADE 50 TO 100 ODDS code</p>
-<div class="winbanner">✅ TRADE TICKET 50 TO 100 ODDS ✅</div>
+<h2>🦁 2. TRADE TICKET</h2>
+<span class="odds-badge">50 TO 100 ODDS</span>
+<p>Pay R30 / $2 - Get TRADE code</p>
+<div class="winbanner">✅ TRADE TICKET ✅</div>
 <div class="circles"><div class="circ green"><b>-- 🔥</b><small>HOT</small></div><div class="circ orange"><b>--</b><small>STILL<br>PLAYING</small></div></div>
 <div style="background:#d4edda;padding:12px;border-radius:10px;text-align:center;margin-top:10px;border:2px solid #008000;">
 <b>🔥 TEAMS COMING SOON 🔥</b><br>
@@ -81,16 +89,20 @@ td{padding:7px;border-bottom:1px solid #ddd}
 <p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">TEAMS COMING SOON</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
+<!-- MY G - PUT YOUR 3 OR 4 TEAMS HERE -->
+<!-- EXAMPLE: <tr><td>1</td><td>Man City vs Fulham</td><td class="win">Man City | 1</td><td>0.40</td></tr> -->
 </table>
 <p style="text-align:center;font-weight:bold;">Total Odds: --</p>
 <p style="text-align:center;font-size:12px;">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
 </div>
 </div>
 
+<!-- ============ 3. BANKER ============ -->
 <div class="card" id="banker">
-<h2>🦁 3. BANKER TICKET 5 TO 10 ODDS - NEW!</h2>
-<p>Pay R30 / $2 - Get BANKER 5 TO 10 ODDS code</p>
-<div class="winbanner">✅ BANKER TICKET MUCH TRUSTED 5 TO 10 ODDS ✅</div>
+<h2>🦁 3. BANKER TICKET</h2>
+<span class="odds-badge-green">5 TO 10 ODDS - NEW! MUCH TRUSTED</span>
+<p>Pay R30 / $2 - Get BANKER code</p>
+<div class="winbanner">✅ BANKER TICKET - MUCH TRUSTED ✅</div>
 <div class="circles"><div class="circ green"><b>-- 🔥</b><small>HOT</small></div><div class="circ orange"><b>--</b><small>STILL<br>PLAYING</small></div></div>
 <div style="background:#d4edda;padding:12px;border-radius:10px;text-align:center;margin-top:10px;border:2px solid #008000;">
 <b>🔥 TEAMS COMING SOON 🔥</b><br>
@@ -102,15 +114,17 @@ td{padding:7px;border-bottom:1px solid #ddd}
 <p style="text-align:center;font-size:17px;font-weight:bold;margin-top:12px;">TEAMS COMING SOON</p>
 <table>
 <tr><th>#</th><th>TEAMS</th><th>PICK</th><th>ODDS</th></tr>
+<!-- MY G - PUT YOUR 3 OR 4 TEAMS HERE -->
+<!-- EXAMPLE: <tr><td>1</td><td>Man City vs Fulham</td><td class="win">Man City | 1</td><td>0.40</td></tr> -->
 </table>
 <p style="text-align:center;font-weight:bold;">Odds: --</p>
 </div>
 </div>
 
 <script>
-function unlock1(){ if(document.getElementById('code1').value.trim().toUpperCase() === 'STD250'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
-function unlock2(){ if(document.getElementById('code2').value.trim().toUpperCase() === 'TRD350'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
-function unlock3(){ if(document.getElementById('code3').value.trim().toUpperCase() === 'BNK450'){ document.getElementById('teams3').style.display='block'; alert('BANKER Unlocked!'); } else { alert('Wrong BANKER Code!'); } }
+function unlock1(){ if(document.getElementById('code1').value.trim().toUpperCase() === 'STD500'){ document.getElementById('teams1').style.display='block'; alert('STANDARD Unlocked!'); } else { alert('Wrong STANDARD Code!'); } }
+function unlock2(){ if(document.getElementById('code2').value.trim().toUpperCase() === 'TRD600'){ document.getElementById('teams2').style.display='block'; alert('TRADE Unlocked!'); } else { alert('Wrong TRADE Code!'); } }
+function unlock3(){ if(document.getElementById('code3').value.trim().toUpperCase() === 'BNK700'){ document.getElementById('teams3').style.display='block'; alert('BANKER Unlocked!'); } else { alert('Wrong BANKER Code!'); } }
 </script>
 
 <br><br>
