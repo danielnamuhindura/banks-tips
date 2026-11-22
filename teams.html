@@ -12,6 +12,7 @@ body{font-family:Arial;margin:0;background:#0b3d91;text-align:center;padding:10p
 .card h2{margin:0;color:#0b3d91;font-size:22px}
 .badge{display:inline-block;background:#FFD700;color:#0b3d91;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px;margin-top:6px}
 .badge-green{display:inline-block;background:#008000;color:white;padding:5px 12px;border-radius:20px;font-weight:bold;font-size:14px;margin-top:6px}
+.preview{background:#FFF3CD;border:2px solid #FFD700;padding:12px;border-radius:10px;text-align:center;font-weight:bold;color:#0b3d91;margin-top:10px;font-size:16px}
 .countdown{background:#ff0000;color:white;padding:12px;border-radius:10px;text-align:center;font-size:20px;font-weight:bold;margin-top:10px;display:none}
 .locked{background:#333;color:white;padding:12px;border-radius:10px;text-align:center;font-size:16px;font-weight:bold;margin-top:10px;display:none}
 input{width:90%;padding:12px;margin-top:10px;font-size:18px;text-align:center;border:2px solid #0b3d91;border-radius:10px}
@@ -37,7 +38,7 @@ td{padding:8px;border-bottom:1px solid #ddd}
 <div class="card">
 <h2>🦁 1. STANDARD TICKET</h2>
 <span class="badge">10 TO 20 ODDS</span>
-<p>Pay R30 / $2 - Get STANDARD code</p>
+<div class="preview">🔥 7 TEAMS INSIDE - TOTAL ODDS 19.68 - AVAILABLE NOW! 🔥<br>Pay R30 / $2 - Get STANDARD code to UNLOCK!</div>
 <input type="password" id="code1" placeholder="Enter STANDARD Code" autocomplete="off">
 <button onclick="unlock1()">UNLOCK STANDARD</button>
 <div id="countdown1" class="countdown"></div>
@@ -100,15 +101,12 @@ td{padding:8px;border-bottom:1px solid #ddd}
 </div>
 
 <script>
-// THIS SCRIPT ALWAYS WORKS - EVEN IF FIREBASE FAILS!
 const VALID_CODES = {
   1: ["STD500","STD501","STD502","STD503","STD504","STD505"],
   2: ["TRD600","TRD601","TRD602","TRD603","TRD604"],
   3: ["BNK700","BNK701","BNK702","BNK703","BNK704"]
 };
 let used1 = false, used2 = false, used3 = false;
-let firebaseDB = null;
-
 function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticketNum){
   let timeLeft = seconds;
   let box = document.getElementById(countdownId);
@@ -132,7 +130,6 @@ function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticket
     }
   }, 1000);
 }
-
 function doUnlock(num, codeId, teamsId, countdownId, lockedId, inputId){
   if(num==1 && used1){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
   if(num==2 && used2){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
@@ -140,7 +137,6 @@ function doUnlock(num, codeId, teamsId, countdownId, lockedId, inputId){
   let code = document.getElementById(codeId).value.trim().toUpperCase();
   if(!code){ alert('Enter code first!'); return; }
   if(!VALID_CODES[num].includes(code)){ alert('❌ Wrong Code! Go to BANKY for NEW code!'); return; }
-  // If Firebase loaded, try to check global - if Firebase fails, STILL UNLOCK so customer is not stuck!
   if(window.firebaseCheck){
     window.firebaseCheck(code).then(function(ok){
       if(ok === false){ alert('🔒 THIS CODE ALREADY USED ON ANOTHER PHONE! One Code = One Person! Go to BANKY for NEW code!'); return; }
@@ -158,7 +154,6 @@ function unlock3(){ doUnlock(3,'code3','teams3','countdown3','locked3','code3');
 </script>
 
 <script type="module">
-// Try to load Firebase - if it fails, buttons STILL work above!
 try{
   const { db } = await import("./lib/firebase.js");
   const { ref, get, set } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");
@@ -168,19 +163,13 @@ try{
       if(snap.exists()) return false;
       await set(ref(db, "usedCodes/" + code), { usedAt: new Date().toISOString() });
       return true;
-    }catch(e){
-      return true; // If Firebase error, allow unlock so customer not stuck
-    }
+    }catch(e){ return true; }
   };
-  console.log("Firebase OK");
-}catch(e){
-  console.log("Firebase failed, using local mode", e);
-}
+}catch(e){ console.log("Firebase failed, using local mode", e); }
 </script>
 
 <br><br>
 <a href="index.html" style="display:block;background:white;color:#0b3d91;padding:18px;text-align:center;font-size:20px;font-weight:bold;border-radius:12px;text-decoration:none;max-width:650px;margin:auto;">⬅️ BACK TO MAIN WEBSITE</a>
 <br><br>
-
 </body>
 </html>
