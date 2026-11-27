@@ -34,6 +34,32 @@ td{padding:8px;border-bottom:1px solid #ddd}
 <p style="font-size:13px;">✅ One Code = One Person Only &nbsp; | &nbsp; ⏰ 30 Seconds Only &nbsp; | &nbsp; 🔒 Auto-Lock</p>
 </div>
 
+<!-- TODAY - 7 TEAMS - 3.97 ODDS - NEW FROM HOLLYWOODBETS SLIP -->
+<div class="card">
+<h2>🦁 4. TODAY TICKET - 27 NOV</h2>
+<span class="badge-green">7 TEAMS - 3.97 ODDS - TODAY!</span>
+<div class="preview">🔥 TODAY - 7 TEAMS INSIDE - TOTAL ODDS 3.97 - AVAILABLE NOW! KICK OFF 27 NOV 10:30 🔥<br>Pay R30 / $2 - Get TODAY code to UNLOCK!</div>
+<input type="password" id="code4" placeholder="Enter TODAY Code" autocomplete="off">
+<button onclick="unlock4()">UNLOCK TODAY</button>
+<div id="countdown4" class="countdown"></div>
+<div id="locked4" class="locked">🔒 LOCKED! This code is EXPIRED. Go to BANKY for NEW code!</div>
+<div id="teams4" class="teams">
+<div class="hot">🦁 TODAY - 7 TEAMS - SCREENSHOT FAST! 🦁</div>
+<table>
+<tr><th>#</th><th>TEAMS</th><th>MARKET / PICK</th><th>ODDS</th></tr>
+<tr><td>1</td><td>BANGLADESH POLICE FC vs ABAHANI LIMITED DHAKA<br><small>27 Nov - 10:30</small></td><td class="win">Matchbet & BTTS - BANGLADESH POLICE FC & YES</td><td>3.4</td></tr>
+<tr><td>2</td><td>FK LOVCEN vs FK PODGORICA<br><small>27 Nov - 14:00</small></td><td class="win">Full Time - FK PODGORICA</td><td>1.01</td></tr>
+<tr><td>3</td><td>AB GLADSAXE vs VEJLE BK<br><small>27 Nov - 20:00</small></td><td class="win">Full Time - VEJLE BK</td><td>0.95</td></tr>
+<tr><td>4</td><td>FC PETROLUL PLOIESTI vs ACS CHAMPIONS FC ARGES<br><small>27 Nov - 20:30</small></td><td class="win">Full Time - FC PETROLUL PLOIESTI</td><td>1.2</td></tr>
+<tr><td>5</td><td>WERDER BREMEN vs MONCHENGLADBACH<br><small>27 Nov - 21:30</small></td><td class="win">Full Time - WERDER BREMEN</td><td>0.65</td></tr>
+<tr><td>6</td><td>VENEZIA vs BOLOGNA<br><small>27 Nov - 21:45</small></td><td class="win">Full Time - BOLOGNA</td><td>1.3</td></tr>
+<tr><td>7</td><td>GLENTORAN FC vs LARNE FC<br><small>27 Nov - 21:45</small></td><td class="win">Full Time - LARNE FC</td><td>1.2</td></tr>
+</table>
+<p style="text-align:center;font-weight:bold;">Total Odds: 3.97</p>
+<p class="note">No ticket is 100% guaranteed. Play responsibly, only what you can afford. 18+</p>
+</div>
+</div>
+
 <!-- BANKER - 8 TEAMS - 151.01 ODDS -->
 <div class="card">
 <h2>🦁 1. BANKER TICKET - TOP PICK!</h2>
@@ -61,7 +87,7 @@ td{padding:8px;border-bottom:1px solid #ddd}
 </div>
 </div>
 
-<!-- STANDARD - UPDATED - 8 TEAMS - 425.81 ODDS - BTTS & YES -->
+<!-- STANDARD - UPDATED - 8 TEAMS - 425.81 ODDS -->
 <div class="card">
 <h2>🦁 2. STANDARD TICKET</h2>
 <span class="badge">8 TEAMS - 425.81 ODDS</span>
@@ -125,7 +151,7 @@ td{padding:8px;border-bottom:1px solid #ddd}
 <script type="module">
 import { db } from "./lib/firebase.js";
 import { ref, get, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-let used1 = false, used2 = false, used3 = false;
+let used1 = false, used2 = false, used3 = false, used4 = false;
 function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticketNum){
   let timeLeft = seconds;
   let box = document.getElementById(countdownId);
@@ -143,6 +169,7 @@ function startCountdown(countdownId, teamsId, lockedId, inputId, seconds, ticket
       if(ticketNum==1) used1 = true;
       if(ticketNum==2) used2 = true;
       if(ticketNum==3) used3 = true;
+      if(ticketNum==4) used4 = true;
       alert('🔒 TIME FINISHED! Page LOCKED! Go to BANKY for NEW code!');
     } else {
       box.innerHTML = '⏰ TIME LEFT: ' + timeLeft + ' sec - SCREENSHOT FAST!';
@@ -153,6 +180,7 @@ async function doUnlock(num, codeId, teamsId, countdownId, lockedId, inputId){
   if(num==1 && used1){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
   if(num==2 && used2){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
   if(num==3 && used3){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
+  if(num==4 && used4){ alert('🔒 THIS CODE IS ALREADY USED & EXPIRED! Go to BANKY for NEW code!'); return; }
   let code = document.getElementById(codeId).value.trim().toUpperCase();
   if(!code){ alert('Enter code first!'); return; }
   try{
@@ -169,6 +197,7 @@ async function doUnlock(num, codeId, teamsId, countdownId, lockedId, inputId){
 window.unlock1 = function(){ doUnlock(1,'code1','teams1','countdown1','locked1','code1'); };
 window.unlock2 = function(){ doUnlock(2,'code2','teams2','countdown2','locked2','code2'); };
 window.unlock3 = function(){ doUnlock(3,'code3','teams3','countdown3','locked3','code3'); };
+window.unlock4 = function(){ doUnlock(4,'code4','teams4','countdown4','locked4','code4'); };
 </script>
 
 <br><br>
